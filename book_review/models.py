@@ -31,3 +31,11 @@ class Genre(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Review(models.Model):
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE, related_name='review_by')
+    book_id = models.ForeignKey(Book, on_delete=models.CASCADE, related_name='review_for')
+    details = models.TextField()
+    approved = models.BooleanField(default=False)
+    created_on = models.DateTimeField(auto_now_add=True)
