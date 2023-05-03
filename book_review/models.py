@@ -23,3 +23,11 @@ class Book(models.Model):
 
         def __str__(self):
             return self.name
+
+
+class Genre(models.Model):
+    name = models.CharField(max_length=200, blank=False)
+    slug = models.SlugField(max_length=200, unique=True)
+
+    def __str__(self):
+        return self.name
