@@ -1,9 +1,17 @@
 from django.db import models
-from django.contrib.auth import User
+from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
 
 # Create your models here.
+class Genre(models.Model):
+    name = models.CharField(max_length=200, blank=False)
+    slug = models.SlugField(max_length=200, unique=True)
+
+    def __str__(self):
+        return self.name
+
+
 class Book(models.Model):
     name = models.CharField(max_length=300, blank=False, unique=True)
     author = models.CharField(max_length=300, blank=False, unique=False)
@@ -15,22 +23,13 @@ class Book(models.Model):
     uploaded_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name='book_contributor')
     image = CloudinaryField('image', default='Placeholder')
 
-    class Meta:
-        ordering = ['-created_on']
-
-        def number_of_likes(self):
-            return self.like_count.count()
-
-        def __str__(self):
-            return self.name
-
-
-class Genre(models.Model):
-    name = models.CharField(max_length=200, blank=False)
-    slug = models.SlugField(max_length=200, unique=True)
+    def number_of_likes(self):
+        return self.like_count.count()
 
     def __str__(self):
         return self.name
+
+
 
 
 class Review(models.Model):
@@ -39,3 +38,6 @@ class Review(models.Model):
     details = models.TextField()
     approved = models.BooleanField(default=False)
     created_on = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-created_on']
