@@ -33,11 +33,15 @@ class Book(models.Model):
 
 
 class Review(models.Model):
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE, related_name='review_by')
-    book_id = models.ForeignKey(Book, on_delete=models.CASCADE, related_name='review_for')
+    username = models.ForeignKey(User, on_delete=models.CASCADE, related_name='review_by')
+    book_name = models.ForeignKey(Book, on_delete=models.CASCADE, related_name='review_for')
     details = models.TextField()
     approved = models.BooleanField(default=False)
     created_on = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         ordering = ['-created_on']
+    
+
+    def __str__(self):
+        return f"{self.details} by {self.username}"
