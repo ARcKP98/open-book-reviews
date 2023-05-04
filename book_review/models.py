@@ -30,8 +30,6 @@ class Book(models.Model):
         return self.name
 
 
-
-
 class Review(models.Model):
     username = models.ForeignKey(User, on_delete=models.CASCADE, related_name='review_by')
     book_name = models.ForeignKey(Book, on_delete=models.CASCADE, related_name='review_for')
@@ -41,7 +39,6 @@ class Review(models.Model):
 
     class Meta:
         ordering = ['-created_on']
-    
 
     def __str__(self):
         return f"{self.details} by {self.username}"
