@@ -2,45 +2,56 @@
 {% load static %}
 
 {% block content %}
-<div class="pb-5 col-12 col-sm-6 d-flex flex-column justify-content-center align-items-center">
-  <h1 class="page-title text-center mt-5 mb-2">Welcome to the Open Book Review</h1>
-  <h2 class="page-subtitle text-center homepage-subtitle">
-      Here you can explore reviews for books others have read or add your own. 
-    </h2>
-  <img src="{% static 'images/hero_image.jpeg' %}" alt="">
+<section class="welcome-section">
+<div class="container text-center">
+  <div class="row">
+    <div class="col-lg-7">
+      <h1 class="text-center welcome-text mt-5">Welcome to the Open Book Review</h1>
+      <h2 class="page-subtitle welcome-text">
+        Here you can explore reviews for books others have read or add your own.
+      </h2>
+    </div>
+    <div class="col-lg-5 d-flex align-items-center">
+      <img src="{% static 'images/hero_image.jpeg' %}" class="img-fluid w-100" alt="A Bookshelf full of books.">
+    </div>
+  </div>
+</section>
+
+
+
     <div class="col-12 mt-3 left">
       <div class="row">
-          {% for book in book_list %}
-          <div class="col-md-4">
-              <div class="card mb-4">
-                  <div class="card-body">
-                      <div class="image-container">
-                          <img class="card-img-top"
-                              src="https://img.freepik.com/free-photo/book-composition-with-open-book_23-2147690555.jpg">
-                          <div class="image-flash">
-                              <p class="author">Author: {{ book.author }}</p>
-                          </div>
-                        </div>
-                          <h2 class="card-title">{{ book.name }}</h2>
-                          <p class="card-text">{{ book.genre }}</p>
-                      <hr />
-                      <p class="card-text text-muted h6"> Uploaded By: {{ book.uploaded_by }}
-                      </p>
-                  </div>
+        {% for book in book_list %}
+        <div class="col-md-4">
+          <div class="card mb-4">
+            <div class="card-body">
+              <div class="image-container">
+                <img class="card-img-top"
+                  src="https://img.freepik.com/free-photo/book-composition-with-open-book_23-2147690555.jpg">
+                <div class="image-flash">
+                  <p class="author">Author: {{ book.author }}</p>
+                </div>
               </div>
+              <h2 class="card-title">{{ book.name }}</h2>
+              <p class="card-text">{{ book.genre }}</p>
+              <hr />
+              <p class="card-text text-muted h6"> Uploaded By: {{ book.uploaded_by }}
+              </p>
+            </div>
           </div>
-          {% if forloop.counter|divisibleby:3 %}
+        </div>
+        {% if forloop.counter|divisibleby:3 %}
       </div>
       <div class="row">
-          {% endif %}
-          {% endfor %}
+        {% endif %}
+        {% endfor %}
 
       </div>
+    </div>
   </div>
-</div>
-{% if is_paginated %}
-<nav aria-label="Page navigation">
-  <ul class="pagination justify-content-center">
+  {% if is_paginated %}
+  <nav aria-label="Page navigation">
+    <ul class="pagination justify-content-center">
       {% if page_obj.has_previous %}
       <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
       {% endif %}
@@ -48,9 +59,9 @@
       <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
 
       {% endif %}
-  </ul>
-</nav>
-{% endif %}
+    </ul>
+  </nav>
+  {% endif %}
 </div>
 
 {% endblock %}

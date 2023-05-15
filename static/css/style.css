@@ -1,1 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&family=Tangerine:wght@700&family=Work+Sans:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-family: Work sans, sans-serif;
+  }
+
+
+.welcome-text {
+    font-family: Tangerine, sans-serif;
+    font-weight: 700;
+}
+
+.welcome-section {
+    background-color: yellowgreen;
+}
