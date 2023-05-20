@@ -27,10 +27,12 @@
     <div class="row">
       {% for genre in genre_list %}
       <div class="card mx-auto ml-3 mr-5 mb-3 w100">
+        <a href="{% url 'genre' genre=genre.slug %}">
         <div class="card-body">
           <p class="card-text text-sm">{{ genre.name }}</p>
         </div>
       </div>
+    </a>
       {% if forloop.counter|divisibleby:3 %}
     </div>
     <div class="row">

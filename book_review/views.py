@@ -16,3 +16,15 @@ class GenreList(generic.ListView):
     template_name = 'index.html'
     queryset = Genre.objects.order_by('name')
     paginate_by = 6
+
+
+class ViewGenreTitles(generic.ListView):
+    template_name = 'genre.html'
+    context_object_name = 'genre_items'
+
+    def get_queryset(self):
+        content = {
+            'genre': self.kwargs['genre'],
+            'books': Book.objects.filter(genre__slug=self.kwargs['genre']).filter(approved=True)
+        }
+        return content
