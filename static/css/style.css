@@ -22,6 +22,15 @@ a {
   text-decoration: none;
   color: #050301
 }
+
+.nav-item{
+  list-style-type: none;
+  margin-right: 2px;
+}
+
+.dropdown-item{
+  padding-right: 3rem;
+}
 /*Footer*/
 footer {
     height: 150px;
