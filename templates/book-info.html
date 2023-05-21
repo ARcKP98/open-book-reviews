@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+<div class="masthead">
+    <div class="container">
+        <div class="row g-0">
+            <div class="col-md-12 masthead-text">
+                <!-- Post title goes in these h1 tags -->
+                <h1 class="post-title text-center mt-3">{{ book.name }}</h1>
+                <!-- Post author goes before the | the post's created date goes after -->
+                <p class="post-subtitle text-center">-{{ book.author }}</p>
+                <p class="post-subtitle text-center">Uploaded By: {{ book.uploaded_by }}</p>
+            </div>
+            <div class="container-fluid pt-md-4">
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                {% if "Placeholder" in book.image.url %}
+                <img  src="https://img.freepik.com/free-photo/book-composition-with-open-book_23-2147690555.jpg" class="img-fluid mb-3">
+                {% else %}
+                <img src=" {{ book.image.url }}" width="100%" class="">
+                {% endif %}
+            </div>
+            <div class="col-md-6 pt-md-4">
+                <div class="row justify-content-center">
+                    <div class="col col-md-8">
+                      <h3 class="pt-xs-4">Blurb</h3>
+                      {{ book.blurb | linebreaks }}
+                      <h3>Ratings:</h3>
+                    </div>
+                  </div>
+            </div>
+            </div>
+            </div>
+            <!-- <div class="row justify-content-center">
+                <div class="col col-md-8">
+                  <h3 class="h3-styles">Blurb</h3>
+                  {{ book.blurb | linebreaks }}
+                </div>
+              </div> -->
+        </div>
+    </div>
+</div>
+{% endblock content %}
