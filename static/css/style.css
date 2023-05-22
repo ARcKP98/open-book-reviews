@@ -31,6 +31,15 @@ a {
 .dropdown-item{
   padding-right: 3rem;
 }
+
+/* .card-text {
+  font-size: 12px;
+} */
+
+.btn-login {
+
+  background-color: #B8E95C;
+}
 /*Footer*/
 footer {
     height: 150px;
