@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
 from .models import Book, Genre
+from .forms import ReviewForm
 
 
 # Create your views here.
@@ -29,14 +30,11 @@ class BookInfo(View):
     def get(self, request, slug, *args, **kwargs):
         queryset = Book.objects.filter(approved=True)
         book = get_object_or_404(queryset, slug=slug)
-        like = False
-        if book.like_count.filter(id=self.request.user.id).exists():
-            like = True
         return render(
             request,
             'book-info.html',
             {
                 'book': book,
-                'like': like,
+                'review': ReviewForm(),
             }
         )
