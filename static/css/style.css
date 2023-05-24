@@ -32,11 +32,12 @@ a {
   font-size: 12px;
 } */
 .login input {
-  border: #000000 solid 1px;
+  border: #4C4646 solid 1px;
+  text-decoration: none;
 }
 .signup input {
   display: flex;
-  border: #000000 solid 1px;
+  border: #4C4646 solid 1px;
   text-align: center;
   margin: 0 auto;
 
