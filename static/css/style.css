@@ -47,6 +47,9 @@ a {
   background-color: #B8E95C;
 }
 
+.book-image {
+  width: 80%;
+}
 /*Footer*/
 footer {
     height: 150px;
