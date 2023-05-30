@@ -13,8 +13,8 @@ class Genre(models.Model):
 
 
 class Book(models.Model):
-    name = models.CharField(max_length=300, blank=False, unique=True)
-    author = models.CharField(max_length=300, blank=False, unique=False)
+    name = models.CharField(max_length=300, unique=True)
+    author = models.CharField(max_length=300, blank=False, null=False, unique=False)
     genre = models.ForeignKey(Genre, on_delete=models.PROTECT, related_name='book_genre')
     blurb = models.TextField()
     slug = models.SlugField(max_length=200, unique=True)
