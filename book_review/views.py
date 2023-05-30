@@ -51,9 +51,9 @@ class BookInfo(View):
         review_form = ReviewForm(data=request.POST)
 
         if review_form.is_valid():
-            review_form.instance.name = request.user.username
+            review_form.instance.username = request.user
             review = review_form.save(commit=False)
-            review.book = book
+            review.book_name = book
             review.save()
         else:
             review_form = ReviewForm()
@@ -64,7 +64,7 @@ class BookInfo(View):
                 "book": book,
                 "reviews": reviews,
                 "reviewed": True,
-                "review_form": ReviewForm()
+                "review_form": review_form
             },
         )
     
