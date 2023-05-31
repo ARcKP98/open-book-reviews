@@ -8,9 +8,9 @@
 <div class="container text-center">
   <div class="row">
     <div class="col-md-8 mt-3 mx-auto text-center">
-      <h1 class="mt-3">{% trans "Sign Out" %}</h1>
+      <h1 class="mt-3">{% trans "Log Out" %}</h1>
 
-      <p>{% trans 'Are you sure you want to sign out,' %} {% trans "user" as username %}{{ user.username|title }}?</p>
+      <p>{% trans 'Are you sure you want to log out,' %} {% trans "user" as username %}{{ user.username|title }}?</p>
 
 
       <form method="post" action="{% url 'account_logout' %}">
@@ -18,7 +18,7 @@
         {% if redirect_field_value %}
         <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
         {% endif %}
-        <button class="btn btn-account" type="submit">{% trans 'Sign Out' %}</button>
+        <button class="btn btn-account" type="submit">{% trans 'Log Out' %}</button>
       </form>
     </div>
   </div>
