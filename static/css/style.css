@@ -50,6 +50,10 @@ a {
 .book-image {
   width: 80%;
 }
+
+.like-btn {
+  background: transparent;
+}
 /*Footer*/
 footer {
     height: 150px;
