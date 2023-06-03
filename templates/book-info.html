@@ -28,10 +28,10 @@
                                 {{ book.blurb | linebreaks }}
                                 <h3>Ratings: </h3>
                                 <div class="col-6 mt-3">
-                                    <p style="display: inline-block;">Liked By</p>
+                                    <p style="display: inline-block;">Read By:  </p>
                                     <strong>
                                         {% if user.is_authenticated %}
-                                        <form class="d-inline" action="{% url 'book_liked' book.slug %}" method="POST">
+                                        <form action="{% url 'book_liked' book.slug %}" method="POST">
                                             {% csrf_token %}
                                             {% if liked %}
                                             <button type="submit" value="{{book.slug}}" class="like-btn"><i
