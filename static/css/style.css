@@ -51,8 +51,9 @@ a {
   width: 80%;
 }
 
-.like-btn {
+.read-btn {
   background: transparent;
+  display: inline-block;
 }
 /*Footer*/
 footer {

@@ -28,16 +28,16 @@
                                 {{ book.blurb | linebreaks }}
                                 <h3>Ratings: </h3>
                                 <div class="col-6 mt-3">
-                                    <p style="display: inline-block;">Read By:  </p>
+                                    <p class="read-btn">Read By:  </p>
                                     <strong>
                                         {% if user.is_authenticated %}
-                                        <form action="{% url 'book_liked' book.slug %}" method="POST">
+                                        <form action="{% url 'book_liked' book.slug %}" class="read-btn" method="POST">
                                             {% csrf_token %}
                                             {% if liked %}
-                                            <button type="submit" value="{{book.slug}}" class="like-btn"><i
+                                            <button type="submit" value="{{book.slug}}" class="read-btn"><i
                                                     class="fa-solid fa-book"></i></button>
                                             {% else %}
-                                            <button type="submit" value="{{book.slug}}" class="like-btn"><i
+                                            <button type="submit" value="{{book.slug}}" class="read-btn"><i
                                                     class="fa-solid fa-book-open"></i></button>
                                             {% endif %}
                                         </form>
