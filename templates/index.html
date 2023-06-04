@@ -28,15 +28,17 @@
         <div class="row">
           {% for genre in genre_list %}
           <div class="col-xl-4">
-            <div class="card mb-4">
-              <div class="card-body">
-                <h2 class="card-title">{{ genre.name }}</h2>
-                <hr />
-                <div class="image-container">
-                  <img class="img-fluid" src="{% static 'images/genre_image.jpeg' %}">
-                </div>    
+            <a href="{% url 'books' genre=genre.slug %}">
+              <div class="card mb-4">
+                <div class="card-body">
+                  <h2 class="card-title">{{ genre.name }}</h2>
+                  <hr />
+                  <div class="image-container">
+                    <img class="img-fluid" src="{% static 'images/genre_image.jpeg' %}">
+                  </div>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
           {% if forloop.counter|divisibleby:3 %}
         </div>
