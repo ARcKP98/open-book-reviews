@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.utils.text import slugify
 from .models import Book, Genre, Review
 from .forms import ReviewForm, BookForm
@@ -77,8 +78,7 @@ class BookInfo(View):
             },
         )
 
-
-class AddBook(View):
+class AddBook(LoginRequiredMixin, View):
     def get(self, request):
         return render(
             request,
