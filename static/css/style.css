@@ -31,6 +31,14 @@ a {
   margin-right: 4.5rem;
 }
 
+.add-review-btn{
+  background-color: #B8E95C;
+  font-size: 23px;
+  padding: 15px;
+  text-align: center;
+  border-radius: 50px;
+  margin-left: 7rem;
+}
 .login input {
   border: #4C4646 solid 1px;
   text-decoration: none;

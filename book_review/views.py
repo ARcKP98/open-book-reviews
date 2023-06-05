@@ -1,7 +1,8 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
+from django.utils.text import slugify
 from .models import Book, Genre, Review
-from .forms import ReviewForm
+from .forms import ReviewForm, BookForm
 from django.http import HttpResponseRedirect
 
 
@@ -77,6 +78,40 @@ class BookInfo(View):
         )
 
 
+class AddBook(View):
+    def get(self, request):
+        return render(
+            request,
+            "add-book.html",
+            {
+                "book_form": BookForm()
+            },
+        )
+
+    def post(self, request):
+        book_form = BookForm(data=request.POST)
+
+        if book_form.is_valid():
+            book = book_form.save(commit=False)
+            book.uploaded_by = request.user
+            book.slug = slugify('-'.join([book.name, str(book.author)]),
+                                allow_unicode=False)
+            book.save()
+
+            return HttpResponseRedirect(reverse('books'))
+
+        else:
+            book_form = BookForm()
+
+        return render(
+            request,
+            "add-book.html",
+            {
+                "book_form": BookForm()
+            },
+        )
+
+
 class LikeBook(View):
     def post(self, request, slug):
         book = get_object_or_404(Book, slug=slug)
@@ -84,7 +119,5 @@ class LikeBook(View):
             book.like_count.remove(request.user)
         else:
             book.like_count.add(request.user)
-        
-        return HttpResponseRedirect(reverse('book-info', args=[slug]))
 
-   
+        return HttpResponseRedirect(reverse('book-info', args=[slug]))
