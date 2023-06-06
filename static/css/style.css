@@ -63,6 +63,27 @@ a {
   background: transparent;
   display: inline-block;
 }
+
+/* Add Book */
+#add-book-form {
+  margin-left: 2.5rem;
+  width: 75%;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+#add-book-form label{
+  margin-top: 1.5rem;
+}
+
+.btn-add-book{
+  background-color: #B8E95C;
+  display: block;
+  margin: 0 auto;
+  padding: 15px;
+  border-radius: 50px;
+}
+
 /*Footer*/
 footer {
     height: 150px;

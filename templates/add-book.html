@@ -2,24 +2,18 @@
 {% block content %}
 {% load crispy_forms_tags %}
 
-<section>
-  <div>
-    <div>
-      <h1 class="page-title">Add a Book</h1>
-    </div>
+<section class="mb-5">
+  <div class="text-center mb-5">
+    <h1>Add a Book</h1>
+    <h6>Fill out the form below with all the details to send your book for approval.</h6>
   </div>
-  <div>
-    <div>
-      <form action="." method="POST" enctype="multipart/form-data" style="margin-top: 1.3em">
-        {{ book_form | crispy }}{% csrf_token %}
-        <button type="submit" class="btn btn-styles">Save</button>
-      </form>
-    </div>
+  <div id="add-book-form">
+    <form method="POST">
+      {{ book_form | crispy }}{% csrf_token %}
+      <button type="submit" class="btn btn-add-book mt-4">Add Book</button>
+    </form>
   </div>
-</section>
 
-<section>
-  
 </section>
 
 {% endblock %}
