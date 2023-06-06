@@ -9,8 +9,8 @@
             <h1>{{ genre_items.genre|title }} Books</h1>
         </div>
     </div>
-    {% for book in genre_items.books %}
     <div class="row">
+        {% for book in genre_items.books %}
         <div class="col-md-3">
             <a href="{% url 'book-info' book.slug%}">
             <div class="card mb-4 mt-4">
@@ -26,7 +26,11 @@
               </div>
             </a>
         </div>
-        {% endfor%}
+        {% if forloop.counter|divisibleby:3 %}
+    </div>
+    <div class="row">
+      {% endif %}
+      {% endfor %}
 
     </div>
 
