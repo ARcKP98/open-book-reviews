@@ -9,7 +9,7 @@
       but don't worry if you can't.</h6>
   </div>
   <div id="add-book-form">
-    <form method="POST">
+    <form method="POST" enctype="multipart/form-data">
       {{ book_form | crispy }}
       {% csrf_token %}
       <button type="submit" class="btn btn-add-book mt-4">Add Book</button>

@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.utils.text import slugify
@@ -89,7 +89,7 @@ class AddBook(LoginRequiredMixin, View):
         )
 
     def post(self, request):
-        book_form = BookForm(data=request.POST)
+        book_form = BookForm(request.POST, request.FILES)
 
         if book_form.is_valid():
             book = book_form.save(commit=False)
@@ -98,7 +98,7 @@ class AddBook(LoginRequiredMixin, View):
                                 allow_unicode=False)
             book.save()
 
-            return HttpResponseRedirect(reverse('add-book'))
+            return redirect('books')
 
         else:
             book_form = BookForm()
