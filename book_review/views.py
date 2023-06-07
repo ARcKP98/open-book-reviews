@@ -78,6 +78,7 @@ class BookInfo(View):
             },
         )
 
+
 class AddBook(LoginRequiredMixin, View):
     def get(self, request):
         return render(
@@ -98,7 +99,7 @@ class AddBook(LoginRequiredMixin, View):
                                 allow_unicode=False)
             book.save()
 
-            return redirect('books')
+            return redirect('add-book')
 
         else:
             book_form = BookForm()
