@@ -5,11 +5,13 @@
 <section class="mb-5">
   <div class="text-center mb-5">
     <h1>Add a Book</h1>
-    <h6>Fill out the form below with all the details to send your book for approval.</h6>
+    <h6>Fill out the form below with all the details to send your book for approval. You can add a picture if you want
+      but don't worry if you can't.</h6>
   </div>
   <div id="add-book-form">
     <form method="POST">
-      {{ book_form | crispy }}{% csrf_token %}
+      {{ book_form | crispy }}
+      {% csrf_token %}
       <button type="submit" class="btn btn-add-book mt-4">Add Book</button>
     </form>
   </div>

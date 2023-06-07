@@ -98,7 +98,7 @@ class AddBook(LoginRequiredMixin, View):
                                 allow_unicode=False)
             book.save()
 
-            return HttpResponseRedirect(reverse('books'))
+            return HttpResponseRedirect(reverse('add-book'))
 
         else:
             book_form = BookForm()
