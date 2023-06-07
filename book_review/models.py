@@ -10,6 +10,9 @@ class Genre(models.Model):
 
     def __str__(self):
         return self.name
+    
+    class Meta:
+        ordering = ["name"]
 
 
 class Book(models.Model):
@@ -21,7 +24,7 @@ class Book(models.Model):
     approved = models.BooleanField(default=False)
     like_count = models.ManyToManyField(User, blank=True)
     uploaded_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name='book_contributor')
-    image = CloudinaryField('image', default='Placeholder')
+    image = CloudinaryField('image', default='Placeholder', blank=True)
 
     def number_of_likes(self):
         return self.like_count.count()
