@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+from django.shortcuts import reverse
 
 
 # Create your models here.
@@ -10,7 +11,7 @@ class Genre(models.Model):
 
     def __str__(self):
         return self.name
-    
+
     class Meta:
         ordering = ["name"]
 
@@ -45,3 +46,6 @@ class Review(models.Model):
 
     def __str__(self):
         return f"{self.details} by {self.username}"
+        
+    def get_absolute_url(self):
+        return reverse("edit-review", kwargs={"pk": self.pk})

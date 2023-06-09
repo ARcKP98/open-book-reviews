@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
+from django.views.generic import UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.utils.text import slugify
 from .models import Book, Genre, Review
@@ -99,18 +100,22 @@ class AddBook(LoginRequiredMixin, View):
                                 allow_unicode=False)
             book.save()
 
-            return redirect('add-book')
-
         else:
             book_form = BookForm()
 
         return render(
             request,
-            "add-book.html",
+            "index.html",
             {
                 "book_form": BookForm()
             },
         )
+
+
+class EditBook(UpdateView):
+    model = Review
+    fields = ('details',)
+    template_name = 'edit-review.html'
 
 
 class LikeBook(View):
