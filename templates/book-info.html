@@ -28,7 +28,7 @@
                                 {{ book.blurb | linebreaks }}
                                 <h3>Ratings: </h3>
                                 <div class="col-6 mt-3">
-                                    <p class="read-btn">Read By:  </p>
+                                    <p class="read-btn">Read By: </p>
                                     <strong>
                                         {% if user.is_authenticated %}
                                         <form action="{% url 'book_liked' book.slug %}" class="read-btn" method="POST">
@@ -67,9 +67,12 @@
                             Uploaded on: {{ review.created_on }}
                         </p>
                     </div>
+                  
                 </div>
-                {% endfor %}
+              
             </div>
+            {% endfor %}
+
         </div>
         {% if user.is_authenticated %}
         <div class="container">
