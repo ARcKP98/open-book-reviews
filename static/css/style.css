@@ -5,8 +5,18 @@
     padding: 0;
     border: none;
     font-family: Work sans, sans-serif;
+    
   }
 
+.main-page {
+  position: relative;
+}
+.msg-alert {
+  position: absolute;
+  z-index: 1;
+  opacity: 0.8;
+  width: 100%;
+}
 
 .welcome-text {
     font-family: Tangerine, sans-serif;
@@ -21,6 +31,10 @@
 a {
   text-decoration: none;
   color: #050301
+}
+
+#navbar-style {
+  background-color: #5A8700;
 }
 
 .nav-item{

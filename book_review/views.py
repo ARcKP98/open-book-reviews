@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.views.generic import UpdateView, DeleteView
+from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.utils.text import slugify
 from .models import Book, Genre, Review
@@ -99,6 +100,7 @@ class AddBook(LoginRequiredMixin, View):
             book.slug = slugify('-'.join([book.name, str(book.author)]),
                                 allow_unicode=False)
             book.save()
+            messages.success(self.request, 'Your book submission was successful. It will now be reviewed by the admin. ')
 
         else:
             book_form = BookForm()
@@ -117,6 +119,7 @@ class EditReview(UpdateView):
     fields = ('details',)
     template_name = 'edit-review.html'
 
+
     def get_success_url(self):
         return reverse('book-info', kwargs={'slug': self.object.book_name.slug})
 
@@ -124,6 +127,7 @@ class EditReview(UpdateView):
 class DeleteReview(DeleteView):
     model = Review
     template_name = 'delete-review.html'
+
 
     def get_success_url(self):
         return reverse('book-info', kwargs={'slug': self.object.book_name.slug})
