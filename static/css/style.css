@@ -64,6 +64,24 @@ a {
   display: inline-block;
 }
 
+.delete-btn {
+  border: #000000 1px solid;
+  border-radius: 20px;
+}
+
+.edit-btn {
+  border: #000000 1px solid;
+  border-radius: 20px;
+  margin-right: 1rem;
+}
+
+.btn-del {
+  background-color: #B8E95C;
+  margin-bottom: 2rem;
+  display: block;
+  padding: 12px;
+  width: 50%;
+}
 /* Add Book */
 #add-book-form {
   margin-left: 2.5rem;

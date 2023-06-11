@@ -67,8 +67,8 @@
                             Uploaded on: {{ review.created_on }}
                         </p>
                         {% if user.id == review.username.id %}
-                        <a href="{% url 'edit-review' review.pk %}">Edit</a>
-                        <a href="{% url 'delete-review' review.pk %}">Delete</a>
+                        <a class=" btn edit-btn" href="{% url 'edit-review' review.pk %}">Edit</a>
+                        <a class=" btn delete-btn" href="{% url 'delete-review' review.pk %}">Delete</a>
                         {% endif %}
                     </div>
                  
