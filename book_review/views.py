@@ -112,16 +112,21 @@ class AddBook(LoginRequiredMixin, View):
         )
 
 
-class EditBook(UpdateView):
+class EditReview(UpdateView):
     model = Review
     fields = ('details',)
     template_name = 'edit-review.html'
 
+    def get_success_url(self):
+        return reverse('book-info', kwargs={'slug': self.object.book_name.slug})
+
 
 class DeleteReview(DeleteView):
     model = Review
-    success_url = '/'
     template_name = 'delete-review.html'
+
+    def get_success_url(self):
+        return reverse('book-info', kwargs={'slug': self.object.book_name.slug})
 
 
 class LikeBook(View):
