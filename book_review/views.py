@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
-from django.views.generic import UpdateView
+from django.views.generic import UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.utils.text import slugify
 from .models import Book, Genre, Review
@@ -116,6 +116,12 @@ class EditBook(UpdateView):
     model = Review
     fields = ('details',)
     template_name = 'edit-review.html'
+
+
+class DeleteReview(DeleteView):
+    model = Review
+    success_url = '/'
+    template_name = 'delete-review.html'
 
 
 class LikeBook(View):

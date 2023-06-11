@@ -7,5 +7,6 @@ urlpatterns = [
     path('add-book/', views.AddBook.as_view(), name='add-book'),
     path('like/<slug:slug>', views.LikeBook.as_view(), name="book_liked"),
     path('edit-book/<int:pk>', views.EditBook.as_view(), name="edit-review"),
-    path('<slug:slug>/', views.BookInfo.as_view(), name='book-info'),
+    path('<int:pk>/delete-review', views.DeleteReview.as_view(), name="delete-review"),
+    path('book-info<slug:slug>/', views.BookInfo.as_view(), name='book-info'),
 ]
