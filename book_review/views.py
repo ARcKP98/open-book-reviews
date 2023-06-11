@@ -75,7 +75,7 @@ class BookInfo(View):
                 "reviews": reviews,
                 "reviewed": True,
                 "liked": liked,
-                "review_form": review_form
+                "review_form": ReviewForm()
             },
         )
 
