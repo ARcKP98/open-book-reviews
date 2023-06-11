@@ -109,6 +109,14 @@ a {
 .review-submit {
   background-color: #B8E95C;
 }
+
+.edit-review label{
+  display: block;
+  margin-bottom: 1rem;
+}
+.edit-review textarea{
+  border: 1px black solid;
+}
 /*Footer*/
 footer {
     height: 150px;

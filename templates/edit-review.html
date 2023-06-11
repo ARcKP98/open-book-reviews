@@ -6,15 +6,18 @@
   <div class="text-center mb-5">
     <h1>Change your Review</h1>
     <h6>When you change your review here, your old review is replaced with this one. Remember to be respectful and kind.
+      <br>
       Any reviews that don't follow these rules will be removed</h6>
   </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8 mt-4">
+  <div class="container text-center">
+    <div class="row justify-content-center">
+      <div class="col-md-12 mt-4">
         <form method="post">
+          <div class="edit-review">
           {{ form.as_p }}
           {% csrf_token %}
-          <button type="submit" class="mt-3 mb-3 btn btn-md review-submit">Submit</button>
+        </div>
+          <button type="submit" class="mt-3 mb-3 btn review-submit">Submit</button>
         </form>
       </div>
     </div>
