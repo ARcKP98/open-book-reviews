@@ -105,7 +105,7 @@ class AddBook(LoginRequiredMixin, View):
 
         return render(
             request,
-            "index.html",
+            "add-book.html",
             {
                 "book_form": BookForm()
             },
