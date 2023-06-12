@@ -66,6 +66,7 @@ class BookInfo(View):
             review = review_form.save(commit=False)
             review.book_name = book
             review.save()
+            messages.success(self.request, 'Review received! It will now get checked by the Admin.')
         else:
             review_form = ReviewForm()
         return render(
@@ -100,7 +101,7 @@ class AddBook(LoginRequiredMixin, View):
             book.slug = slugify('-'.join([book.name, str(book.author)]),
                                 allow_unicode=False)
             book.save()
-            messages.success(self.request, 'Your book submission was successful. It will now be reviewed by the admin. ')
+            messages.success(self.request, 'Your book submission was successful. It will now be checked by the admin. ')
 
         else:
             book_form = BookForm()
@@ -121,6 +122,7 @@ class EditReview(UpdateView):
 
 
     def get_success_url(self):
+        messages.info(self.request, 'Your review was updated successfully.')
         return reverse('book-info', kwargs={'slug': self.object.book_name.slug})
 
 
@@ -130,6 +132,7 @@ class DeleteReview(DeleteView):
 
 
     def get_success_url(self):
+        messages.info(self.request, 'Your review was deleted successfully.')
         return reverse('book-info', kwargs={'slug': self.object.book_name.slug})
 
 
