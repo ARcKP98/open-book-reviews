@@ -8,5 +8,5 @@ urlpatterns = [
     path('like/<slug:slug>', views.LikeBook.as_view(), name="book_liked"),
     path('edit-book/<int:pk>', views.EditReview.as_view(), name="edit-review"),
     path('<int:pk>/delete-review', views.DeleteReview.as_view(), name="delete-review"),
-    path('book-info<slug:slug>/', views.BookInfo.as_view(), name='book-info'),
+    path('book-info/<slug:slug>/', views.BookInfo.as_view(), name='book-info'),
 ]
