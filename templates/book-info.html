@@ -18,7 +18,7 @@
                         {% if "Placeholder" in book.image.url %}
                         <img src="{% static 'images/placeholder.avif' %}" class="img-fluid mb-3 book-image">
                         {% else %}
-                        <img src=" {{ book.image.url }}" width="80%" class="img-fluid mb-3 book-image">
+                        <img src=" {{ book.image.url }}" class="img-fluid mb-3 book-image">
                         {% endif %}
                     </div>
                     <div class="col-md-6 pt-md-4">
