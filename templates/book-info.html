@@ -49,6 +49,16 @@
                                         <span class="text-secondary">{{ book.number_of_likes }} </span>
                                     </strong>
                                 </div>
+                                <div class="row mt-5">
+                                   {% if user.is_superuser %}
+                                    <div class="col-sm-4">
+                                        <a class="btn edit-btn" href="{% url 'edit-book' book.slug %}">Edit Book </a>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <a class="btn delete-btn" href="{% url 'delete-book' book.slug %}">Delete Book </a>
+                                    </div>
+                                </div>
+                                {% endif %}
                             </div>
                         </div>
                     </div>

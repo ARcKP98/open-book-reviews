@@ -148,5 +148,8 @@ class LikeBook(View):
 class DeleteBook(DeleteView):
     model = Book
     template_name = "delete-book.html"
-    success_url = "/"
+    
+    def get_success_url(self):
+        messages.info(self.request, 'Your book was deleted successfully.')
+        return reverse('home')
 
