@@ -120,7 +120,6 @@ class EditReview(UpdateView):
     fields = ('details',)
     template_name = 'edit-review.html'
 
-
     def get_success_url(self):
         messages.info(self.request, 'Your review was updated successfully.')
         return reverse('book-info', kwargs={'slug': self.object.book_name.slug})
@@ -129,7 +128,6 @@ class EditReview(UpdateView):
 class DeleteReview(DeleteView):
     model = Review
     template_name = 'delete-review.html'
-
 
     def get_success_url(self):
         messages.info(self.request, 'Your review was deleted successfully.')
@@ -145,3 +143,10 @@ class LikeBook(View):
             book.like_count.add(request.user)
 
         return HttpResponseRedirect(reverse('book-info', args=[slug]))
+
+
+class DeleteBook(DeleteView):
+    model = Book
+    template_name = "delete-book.html"
+    success_url = "/"
+
