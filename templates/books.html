@@ -13,11 +13,11 @@
         {% for book in genre_items.books %}
         <div class="col-md-3">
             <a href="{% url 'book-info' book.slug%}">
-            <div class="card mb-4 mt-4">
+            <div class="card card-books">
                 {% if "Placeholder" in book.image.url %}
-                <img src="{% static 'images/placeholder.avif' %}" width="100%">
+                <img class="card-image" src="{% static 'images/placeholder.avif' %}" width="100%">
                 {% else %}
-                <img src="{{ book.image.url }}" width="100%">
+                <img class="card-image" src="{{ book.image.url }}" width="100%">
                 {% endif %}
                 <div class="card-body">
                   <h5 class="card-title">{{book.name}}</h5>

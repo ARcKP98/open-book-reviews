@@ -124,6 +124,17 @@ a {
   background-color: #B8E95C;
 }
 
+.card-image {
+  height: 30vh;
+  object-fit: cover;
+}
+
+.card-books {
+  height: 50vh;
+  border: #000000 1px solid;
+  margin: 9px;
+}
+
 .edit-review label{
   display: block;
   margin-bottom: 1rem;
