@@ -145,11 +145,3 @@ class LikeBook(View):
         return HttpResponseRedirect(reverse('book-info', args=[slug]))
 
 
-class DeleteBook(DeleteView):
-    model = Book
-    template_name = "delete-book.html"
-    
-    def get_success_url(self):
-        messages.info(self.request, 'Your book was deleted successfully.')
-        return reverse('home')
-
