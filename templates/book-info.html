@@ -69,7 +69,7 @@
                         <p class="text-muted">
                             Uploaded on: {{ review.created_on }}
                         </p>
-                        {% if user.id == review.username.id %}
+                        {% if user.id == review.username.id or user.is_superuser %}
                         <a class=" btn edit-btn" href="{% url 'edit-review' review.pk %}">Edit</a>
                         <a class=" btn delete-btn" href="{% url 'delete-review' review.pk %}">Delete</a>
                         {% endif %}

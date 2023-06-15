@@ -148,6 +148,3 @@ class LikeBook(View):
 class ContactUs(TemplateView):
     template_name = 'contact-form.html'
 
-    # def post(self, request):
-    #     messages.info(self.request, 'Your review was deleted successfully.')
-    #     return HttpResponseRedirect(reverse('home'))
