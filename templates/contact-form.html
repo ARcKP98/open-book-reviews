@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+
+<div class="container text-center contact-page">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Contact Us</h1>
+            <h6>If you have suggestions or queries about the website, reach out using the form below.</h6>
+        </div>
+    </div>
+</div>
+<div>
+    <form method="POST" id="contact-form">
+        {% csrf_token %}
+        <label for="name">Name:</label>
+        <input id="name" type="text" name="from_name" required>
+        <label for="email">Email:</label>
+        <input id="email" type="email" name="from_email" required>
+        <label for="message">Please write your questions/queries below</label>
+        <textarea name="message" id="question"
+        placeholder=" Write your comment here" required></textarea>
+        <button type="submit" class="btn btn-contact">Submit</button>
+    </form>
+
+</div>
+
+{% endblock %}

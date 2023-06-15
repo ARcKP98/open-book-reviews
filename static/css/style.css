@@ -115,7 +115,32 @@ a {
   padding: 15px;
   border-radius: 50px;
 }
+#contact-form {
+  margin-left: 2.5rem;
+}
+#contact-form input {
+  width: 70%;
+  border: 1px solid black;
+  display: block;
+  padding: 6px;
+}
+#contact-form label {
+  margin-top: 2rem;
+  display: block;
+}
 
+#contact-form textarea{
+  border: 1px solid #000000;
+  width: 80%;
+  height: 30vh;
+}
+
+.btn-contact {
+  display: block;
+  background-color: #B8E95C;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
 .review-form {
   display: display;
   margin: 0 auto;

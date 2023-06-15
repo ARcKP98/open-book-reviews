@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
-from django.views.generic import UpdateView, DeleteView
+from django.views.generic import UpdateView, DeleteView, TemplateView
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.utils.text import slugify
@@ -145,3 +145,9 @@ class LikeBook(View):
         return HttpResponseRedirect(reverse('book-info', args=[slug]))
 
 
+class ContactUs(TemplateView):
+    template_name = 'contact-form.html'
+
+    # def post(self, request):
+    #     messages.info(self.request, 'Your review was deleted successfully.')
+    #     return HttpResponseRedirect(reverse('home'))
