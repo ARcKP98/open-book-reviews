@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&family=Tangerine:wght@700&family=Work+Sans:wght@300&display=swap');
 
+/* Genral Styles */
 * {
   margin: 0;
   padding: 0;
@@ -8,6 +9,19 @@
 
 }
 
+a {
+  text-decoration: none;
+  color: #050301
+}
+.fa-arrow-left {
+  color: #050505;
+  font-size: 23px;
+}
+.btn-back {
+  display: flex;
+  width: 5%;
+}
+/* Home Page */
 .main-page {
   position: relative;
 }
@@ -29,35 +43,30 @@
   background-color: yellowgreen;
 }
 
-a {
-  text-decoration: none;
-  color: #050301
-}
 
 #navbar-style {
   background-color: #5A8700;
 }
+
 .page-link {
   color: #000000;
   border: 1px navy solid;
   border-radius: 20%;
 }
+
 .nav-item {
   list-style-type: none;
   margin-right: 2px;
 }
 
+
+
+
 .account-opt {
   margin-right: 4.5rem;
 }
-.btn-back {
-  display: flex;
-  width: 5%;
-}
-.fa-arrow-left{
-  color: #050505;
-  font-size: 23px;
-}
+
+
 .add-review-btn {
   background-color: #B8E95C;
   font-size: 23px;
@@ -67,6 +76,7 @@ a {
   margin-left: 7rem;
 }
 
+/* Login/Signup form styles */
 .login input {
   border: #4C4646 solid 1px;
   text-decoration: none;
@@ -84,6 +94,7 @@ a {
   background-color: #B8E95C;
 }
 
+/* Book Information Page */
 .book-image {
   width: 80%;
 }
@@ -112,6 +123,24 @@ a {
   width: 50%;
 }
 
+.review-form {
+  display: display;
+  margin: 0 auto;
+}
+
+.review-submit {
+  background-color: #B8E95C;
+}
+
+.edit-review label {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.edit-review textarea {
+  border: 1px black solid;
+}
+
 /* Add Book */
 #add-book-form {
   margin-left: 2.5rem;
@@ -132,6 +161,7 @@ a {
   border-radius: 50px;
 }
 
+/* Contact Form */
 #contact-form {
   margin-left: 2.5rem;
 }
@@ -161,15 +191,7 @@ a {
   margin-bottom: 2rem;
 }
 
-.review-form {
-  display: display;
-  margin: 0 auto;
-}
-
-.review-submit {
-  background-color: #B8E95C;
-}
-
+/* Books Style For Genre */
 .card-image {
   height: 30vh;
   object-fit: cover;
@@ -181,14 +203,6 @@ a {
   margin: 9px;
 }
 
-.edit-review label {
-  display: block;
-  margin-bottom: 1rem;
-}
-
-.edit-review textarea {
-  border: 1px black solid;
-}
 
 /*Footer*/
 footer {

@@ -29,7 +29,7 @@
                                 {{ book.blurb | linebreaks }}
                                 <h3>Ratings: </h3>
                                 {% ratings book %}
-                                <div class="col-6 mt-3">
+                                <div class="col-6 mt-3 mb-3">
                                     <p class="read-btn">Read By: </p>
                                     <strong>
                                         {% if user.is_authenticated %}
@@ -57,7 +57,7 @@
             </div>
         </div>
         <div class="row">
-            <h3 class="text-center mb-5">Reviews:</h3>
+            <h3 class="text-center mb-4">Reviews:</h3>
             {% for review in reviews %}
             <div class="col-md-8 card mb-4 mt-3 review-form">
                 <div class="card-body fst-italic">
