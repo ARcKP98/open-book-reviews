@@ -126,8 +126,8 @@ a {
 
 .btn-add-book {
   background-color: #B8E95C;
-  display: block;
-  margin: 0 auto;
+  display: flex;
+  /* margin: 0 auto; */
   padding: 15px;
   border-radius: 50px;
 }

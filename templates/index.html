@@ -22,16 +22,14 @@
 <section id="add-book">
   <div class="container mt-5">
     <div class="row">
-      <div class="col-lg-6">
+      <div class="col-md-5">
         <h3>Welcome back {{user.username | title}}!</h3>
         <h4>We missed you.</h4>
       </div>
-      <div class="col-lg-6">
-        <span>
-          <a href="{% url 'add-book' %}">
-          <button type="button" class="btn btn-lg add-review-btn">Add a Review</button>
+      <div class="col-md-5 text-center">
+          <a href="{% url 'add-book' %}" class="btn btn-lg add-review-btn">Add a Book
         </a>
-        </span>
+     
       </div>
     </div>
   </div>
