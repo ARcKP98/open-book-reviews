@@ -19,12 +19,12 @@
   <!-- Django Star Ratings -->
   <link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
   <script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
-    <!-- EmailJS -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script type="text/javascript">
-      (function() {
-          emailjs.init('pMqUDgruSr9ZBVKcE');
-      })();
+  <!-- EmailJS -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function () {
+      emailjs.init('pMqUDgruSr9ZBVKcE');
+    })();
   </script>
 </head>
 
@@ -120,21 +120,20 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
   </script>
-     <!-- JS for sending the form -->
-     <script>
-      document.getElementById('contact-form').addEventListener('submit', function(event) {
-                  event.preventDefault();
-                  emailjs.sendForm('gmail','open-book-review-contact', '#contact-form')
-                      .then(function() {
-                          console.log('SUCCESS!');
-                      }, function(error) {
-                          console.log('FAILED...', error);
-                      });
-              homeUrl = "{% url 'home' %}"
-              window.location.href = homeUrl
-              alert('Thank you for contacting us. We will reach out soon.')
-              });
-    </script>
+  <!-- JS for sending the form -->
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', function (event) {
+      event.preventDefault();
+      emailjs.sendForm('gmail', 'open-book-review-contact', '#contact-form')
+        .then(function () {
+          document.getElementById('contact-msg').classList.remove('hide');
+          homeUrl = "{% url 'home' %}"
+          setTimeout(function () {
+            window.location.href = homeUrl
+          }, 2500);
+        });
+    });
+  </script>
 </body>
 
 </html>
