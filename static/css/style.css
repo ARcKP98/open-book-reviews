@@ -13,6 +13,7 @@ a {
   text-decoration: none;
   color: #050301
 }
+
 .fa-arrow-left {
   color: #050505;
   font-size: 23px;
@@ -22,10 +23,12 @@ a {
 .genre-heading {
   margin: 0 auto;
 }
+
 .btn-back {
   display: flex;
   width: 5%;
 }
+
 .msg-alert {
   position: absolute;
   z-index: 1;
@@ -42,7 +45,16 @@ a {
   position: absolute;
   width: 100%;
 }
+
 /* Home Page */
+.navbar {
+  background-color: beige;
+}
+
+header a {
+  font-family: Hind Siliguri, sans-serif;
+}
+
 .main-page {
   position: relative;
 }
@@ -57,10 +69,6 @@ a {
   background-color: yellowgreen;
 }
 
-
-#navbar-style {
-  background-color: #5A8700;
-}
 
 .page-link {
   color: #000000;
