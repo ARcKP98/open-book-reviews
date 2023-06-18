@@ -5,10 +5,10 @@
 {% block content %}
 <div class="container">
     <div class="row">
-        <div class="col text-center mt-5">
-          <a href="{% url 'home' %}#genre-list" class="btn btn-back d-flex"><i class="fa-solid fa-arrow-left"></i>
+        <div class="col text-center mt-5 d-flex">
+          <a href="{% url 'home' %}#genre-list" class="btn-back d-flex"><i class="fa-solid fa-arrow-left"></i>
           </a>
-            <h1>{{ genre_items.genre|title }} Books</h1>
+            <h1 class="genre-heading mb-4">{{ genre_items.genre|title }} Books</h1>
         </div>
     </div>
     <div class="row">
