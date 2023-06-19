@@ -36,7 +36,7 @@
           Open Book Review
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-expanded="false">
+          aria-expanded="false" aria-label="Navbar toggler icon">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -78,7 +78,7 @@
     {% for message in messages %}
     <div class="alert {{ message.tags }} alert-dismissible fade in show msg-alert text-center" id="msg" role="alert">
       {{ message | safe }}
-      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close notification"></button>
     </div>
     {% endfor %}
   </header>

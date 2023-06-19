@@ -12,7 +12,7 @@
         <div class="col-md-2">
             <form method="post">
                 {% csrf_token %}
-                <button type="submit" class="btn btn-del mx-auto">Yes</button>
+                <button type="submit" class="btn btn-del mx-auto" aria-label="Confirm deleting the review">Yes</button>
                 <a class="btn btn-del mx-auto" href="{% url 'book-info' review.book_name.slug %}">No</a>
             </form>
         </div>

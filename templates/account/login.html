@@ -28,7 +28,7 @@
         {% if redirect_field_value %}
         <input type="hidden" class="form-label" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
         {% endif %}
-        <button class="btn btn-account" type="submit">{% trans "Login" %}</button>
+        <button class="btn btn-account" type="submit" aria-label="Login to your account">{% trans "Login" %}</button>
       </form>
 
     </div>
