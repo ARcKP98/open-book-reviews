@@ -72,7 +72,7 @@ header a {
 
 .page-link {
   color: #000000;
-  border: 1px navy solid;
+  border: 1px #000000 solid;
   border-radius: 20%;
 }
 
@@ -274,7 +274,7 @@ footer li {
 }
 
 @media (max-width:330px) {
-  .text-muted {
-    font-size: 14px;
+  .text-date {
+    font-size: 12px;
   }
 }
