@@ -1,40 +1,43 @@
 {% extends "base.html" %}
 {% load static %}
 
-
 {% block content %}
+<!-- Page heading -->
 <div class="container">
-    <div class="row">
-        <div class="col text-center mt-5 d-flex">
-          <a href="{% url 'home' %}#genre-list" class="btn-back d-flex"><i class="fa-solid fa-arrow-left"></i>
-          </a>
-            <h1 class="genre-heading mb-4">{{ genre_items.genre|title }} Books</h1>
-        </div>
+  <div class="row">
+    <div class="col text-center mt-5 d-flex">
+      <a href="{% url 'home' %}#genre-list" class="btn-back d-flex"><i class="fa-solid fa-arrow-left"></i>
+      </a>
+      <h1 class="genre-heading mb-4">{{ genre_items.genre|title }} Books</h1>
     </div>
-    <div class="row">
-        {% for book in genre_items.books %}
-        <div class="col-md-4 mb-5">
-            <a href="{% url 'book-info' book.slug%}">
-            <div class="card card-books">
-                {% if "Placeholder" in book.image.url %}
-                <img class="card-image" src="{% static 'images/placeholder.avif' %}" alt="An open book image for a book with no cover." width="100%">
-                {% else %}
-                <img class="card-image" src="{{ book.image.url }}" alt="Cover image for the book: {{book.name}}." width="100%">
-                {% endif %}
-                <div class="card-body">
-                  <h5 class="card-title">{{book.name}}</h5>
-                  <p class="card-text">{{book.author}}</p>
-                </div>
-              </div>
-            </a>
-        </div>
-        {% if forloop.counter|divisibleby:3 %}
-    </div>
-    <div class="row">
-      {% endif %}
-      {% endfor %}
+  </div>
 
+  <!-- All the books in the given genre -->
+  <div class="row">
+    {% for book in genre_items.books %}
+    <div class="col-md-4 mb-5">
+      <a href="{% url 'book-info' book.slug%}">
+        <div class="card card-books">
+          {% if "Placeholder" in book.image.url %}
+          <img class="card-image" src="{% static 'images/placeholder.avif' %}"
+            alt="An open book image for a book with no cover." width="100%">
+          {% else %}
+          <img class="card-image" src="{{ book.image.url }}" alt="Cover image for the book: {{book.name}}."
+            width="100%">
+          {% endif %}
+          <div class="card-body">
+            <h5 class="card-title">{{book.name}}</h5>
+            <p class="card-text">{{book.author}}</p>
+          </div>
+        </div>
+      </a>
     </div>
-
+    {% if forloop.counter|divisibleby:3 %}
+  </div>
+  <div class="row">
+    {% endif %}
+    {% endfor %}
+  </div>
 </div>
+
 {% endblock %}

@@ -6,8 +6,10 @@
   <div class="text-center mb-5">
     <h1>Add a Book</h1>
     <h6>Fill out the form below with all the details to send your book for approval. You can add a picture if you want
-      but don't worry if you can't.</h6>
+      but don't worry if you can't.
+    </h6>
   </div>
+  <!-- Form to add a book -->
   <div id="add-book-form">
     <form method="POST" enctype="multipart/form-data">
       {{ book_form | crispy }}
@@ -15,7 +17,6 @@
       <button type="submit" class="btn btn-add-book mt-4" aria-label="Add book for approval">Add Book</button>
     </form>
   </div>
-
 </section>
 
 {% endblock %}

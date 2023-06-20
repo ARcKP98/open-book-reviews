@@ -1,11 +1,12 @@
 {% extends "base.html" %}
 {% load static %}
 
-
 {% block content %}
+<!-- Load review form and star ratings -->
 {% load crispy_forms_tags %}
 {% load ratings %}
-<div class="masthead">
+<section id="book-info">
+    <!-- Show all the information about the book -->
     <div class="container">
         <div class="row g-0">
             <div class="col-md-12 masthead-text">
@@ -17,9 +18,11 @@
                 <div class="row mb-4">
                     <div class="col-md-5">
                         {% if "Placeholder" in book.image.url %}
-                        <img src="{% static 'images/placeholder.avif' %}" alt="An open book image for a book with no cover." class="img-fluid mb-3 book-image">
+                        <img src="{% static 'images/placeholder.avif' %}"
+                            alt="An open book image for a book with no cover." class="img-fluid mb-3 book-image">
                         {% else %}
-                        <img src=" {{ book.image.url }}" alt="Cover image for the book: {{book.name}}." class="img-fluid mb-3 book-image">
+                        <img src=" {{ book.image.url }}" alt="Cover image for the book: {{book.name}}."
+                            class="img-fluid mb-3 book-image">
                         {% endif %}
                     </div>
                     <div class="col-md-6 pt-md-4">
@@ -37,11 +40,13 @@
                                             {% csrf_token %}
                                             {% if liked %}
                                             <button type="submit" value="{{book.slug}}" class="read-btn"><i
-                                                    class="fa-solid fa-book" aria-label="Read book icon"></i></button>
+                                                class="fa-solid fa-book" aria-label="Read book icon"></i>
+                                            </button>
                                             {% else %}
                                             <button type="submit" value="{{book.slug}}" class="read-btn"><i
-                                                    class="fa-solid fa-book-open"
-                                                    aria-label="Not read book icon"></i></button>
+                                                class="fa-solid fa-book-open"
+                                                aria-label="Not read book icon"></i>
+                                            </button>
                                             {% endif %}
                                         </form>
                                         {% else %}
@@ -50,13 +55,13 @@
                                         <span class="text-secondary">{{ book.number_of_likes }} </span>
                                     </strong>
                                 </div>
-
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- Reviews for the book -->
         <div class="row ps-2 pe-2">
             <h3 class="text-center mb-4">Reviews:</h3>
             {% for review in reviews %}
@@ -75,13 +80,12 @@
                         <a class=" btn delete-btn" href="{% url 'delete-review' review.pk %}">Delete</a>
                         {% endif %}
                     </div>
-
                 </div>
-
             </div>
             {% endfor %}
 
         </div>
+        <!-- Review form -->
         {% if user.is_authenticated %}
         <div class="container">
             <div class="row">
@@ -92,7 +96,8 @@
                         {{ form.as_p }}
                         {% csrf_token %}
                         <button type="submit" class="mt-3 mb-5 btn btn-md review-submit"
-                            aria-label="Submit review">Submit</button>
+                            aria-label="Submit review">Submit
+                        </button>
                     </form>
                 </div>
             </div>
@@ -103,14 +108,16 @@
                 <div class="col-md-12 mt-3 mb-4 d-block">
                     <h3>You must be logged in to leave a review.</h3>
                     <p style="display: block;"><a
-                            class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
-                            href="{% url 'account_signup' %}">Sign Up</a> or <a
-                            class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
-                            href="{% url 'account_login' %}">Login</a></p>
+                        class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+                        href="{% url 'account_signup' %}">Sign Up</a> or <a
+                        class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+                        href="{% url 'account_login' %}">Login</a>
+                    </p>
                 </div>
             </div>
         </div>
         {% endif %}
     </div>
-</div>
+</section>
+
 {% endblock content %}
