@@ -223,6 +223,18 @@ header a {
   margin: 9px;
 }
 
+/* Error */
+.heading {
+  font-size: 12rem;
+}
+
+.error-content {
+  margin-top: 12rem;
+  text-align: center;
+  background-color: #B8E95C;
+  border: 1px solid #000000;
+}
+
 
 /*Footer*/
 footer {
