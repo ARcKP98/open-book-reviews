@@ -229,7 +229,7 @@ header a {
 }
 
 .error-content {
-  /* margin-top: 12rem; */
+  margin: 15px auto;
   text-align: center;
   background-color: #B8E95C;
   border: 1px solid #000000;
