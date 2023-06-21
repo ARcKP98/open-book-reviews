@@ -237,6 +237,11 @@ header a {
 
 .error-img {
   height: 27vh;
+  margin: 7px auto;
+}
+
+.error-content a {
+  text-decoration: underline;
 }
 
 /*Footer*/
