@@ -223,7 +223,7 @@ header a {
   margin: 9px;
 }
 
-/* Error */
+/* Error page(s) */
 .heading {
   font-size: 12rem;
 }
@@ -235,6 +235,9 @@ header a {
   border: 1px solid #000000;
 }
 
+.error-img {
+  height: 27vh;
+}
 
 /*Footer*/
 footer {
