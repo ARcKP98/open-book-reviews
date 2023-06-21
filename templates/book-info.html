@@ -36,7 +36,7 @@
                                     <p class="read-btn">Read By: </p>
                                     <strong>
                                         {% if user.is_authenticated %}
-                                        <form action="{% url 'book_liked' book.slug %}" class="read-btn" method="POST">
+                                        <form action="{% url 'book_read' book.slug %}" class="read-btn" method="POST">
                                             {% csrf_token %}
                                             {% if liked %}
                                             <button type="submit" value="{{book.slug}}" class="read-btn"><i

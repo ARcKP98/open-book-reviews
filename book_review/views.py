@@ -12,6 +12,9 @@ from django.http import HttpResponseRedirect
 # Create your views here.
 
 class GenreList(generic.ListView):
+    '''
+    Displays all the genres on the home page.
+    '''
     model = Genre
     template_name = 'index.html'
     queryset = Genre.objects.order_by('name')
@@ -19,6 +22,10 @@ class GenreList(generic.ListView):
 
 
 class ViewGenreTitles(generic.ListView):
+    '''
+    Displays all the books that are associated with the genre.
+    Only the books that are approved by the admin will be displayed.
+    '''
     template_name = 'books.html'
     context_object_name = 'genre_items'
 
@@ -32,13 +39,18 @@ class ViewGenreTitles(generic.ListView):
 
 
 class BookInfo(View):
+    '''
+    Displays all the information associated with the book. The
+    user can then add a review to the book using the form that is provided
+    and can select whether they have read the book or not.
+    '''
     def get(self, request, slug, *args, **kwargs):
         queryset = Book.objects.filter(approved=True)
         book = get_object_or_404(queryset, slug=slug)
         review = book.review_for.filter(approved=True)
-        liked = False
-        if book.like_count.filter(id=request.user.id).exists():
-            liked = True
+        read = False
+        if book.read_count.filter(id=request.user.id).exists():
+            read = True
         return render(
             request,
             "book-info.html",
@@ -46,7 +58,7 @@ class BookInfo(View):
                 "book": book,
                 "reviews": review,
                 "reviewed": False,
-                "liked": liked,
+                "read": read,
                 "review_form": ReviewForm()
             },
         )
@@ -55,9 +67,9 @@ class BookInfo(View):
         queryset = Book.objects.filter(approved=True)
         book = get_object_or_404(queryset, slug=slug)
         reviews = book.review_for.filter(approved=True)
-        liked = False
-        if book.like_count.filter(id=request.user.id).exists():
-            liked = True
+        read = False
+        if book.read_count.filter(id=request.user.id).exists():
+            read = True
 
         review_form = ReviewForm(data=request.POST)
 
@@ -66,7 +78,10 @@ class BookInfo(View):
             review = review_form.save(commit=False)
             review.book_name = book
             review.save()
-            messages.success(self.request, 'Review received! It will now get checked by the Admin.')
+            messages.success(
+                self.request,
+                'Review received! It will now get checked by the Admin.'
+                )
         else:
             review_form = ReviewForm()
         return render(
@@ -76,13 +91,18 @@ class BookInfo(View):
                 "book": book,
                 "reviews": reviews,
                 "reviewed": True,
-                "liked": liked,
+                "read": read,
                 "review_form": ReviewForm()
             },
         )
 
 
 class AddBook(LoginRequiredMixin, View):
+    '''
+    Allows logged in users to fill out a form to
+    add a book to the collection. The book is then
+    approved/disapproved by the admin.
+    '''
     def get(self, request):
         return render(
             request,
@@ -101,7 +121,11 @@ class AddBook(LoginRequiredMixin, View):
             book.slug = slugify('-'.join([book.name, str(book.author)]),
                                 allow_unicode=False)
             book.save()
-            messages.success(self.request, 'Your book submission was successful. It will now be checked by the admin. ')
+            messages.success(
+                self.request,
+                'Your book submission was successful.' +
+                'It will now be checked by admin.'
+                )
 
         else:
             book_form = BookForm()
@@ -116,35 +140,48 @@ class AddBook(LoginRequiredMixin, View):
 
 
 class EditReview(UpdateView):
+    '''
+    Allows users to edit their original review for a book.
+    '''
     model = Review
     fields = ('details',)
     template_name = 'edit-review.html'
 
     def get_success_url(self):
         messages.info(self.request, 'Your review was updated successfully.')
-        return reverse('book-info', kwargs={'slug': self.object.book_name.slug})
+        return reverse('book-info',
+                       kwargs={'slug': self.object.book_name.slug})
 
 
 class DeleteReview(DeleteView):
+    '''
+    Allows users to delete their original review for a book.
+    '''
     model = Review
     template_name = 'delete-review.html'
 
     def get_success_url(self):
         messages.info(self.request, 'Your review was deleted successfully.')
-        return reverse('book-info', kwargs={'slug': self.object.book_name.slug})
+        return reverse('book-info',
+                       kwargs={'slug': self.object.book_name.slug})
 
 
-class LikeBook(View):
+class ReadBook(View):
+    '''
+    Allows users to show whether they have read the book or not.
+    '''
     def post(self, request, slug):
         book = get_object_or_404(Book, slug=slug)
-        if book.like_count.filter(id=request.user.id).exists():
-            book.like_count.remove(request.user)
+        if book.read_count.filter(id=request.user.id).exists():
+            book.read_count.remove(request.user)
         else:
-            book.like_count.add(request.user)
+            book.read_count.add(request.user)
 
         return HttpResponseRedirect(reverse('book-info', args=[slug]))
 
 
 class ContactUs(TemplateView):
+    '''
+    Contact form to connect with the admin.
+    '''
     template_name = 'contact-form.html'
-

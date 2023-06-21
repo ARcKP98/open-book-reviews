@@ -5,12 +5,18 @@ from .models import Genre, Book, Review
 # Register your models here.
 @admin.register(Genre)
 class GenreAdmin(admin.ModelAdmin):
+    '''
+    Add fields for the Admin Panel for the Genre Model.
+    '''
     prepopulated_fields = {'slug': ['name']}
     list_filter = ['name']
 
 
 @admin.register(Book)
 class BookAdmin(admin.ModelAdmin):
+    '''
+    Add fields for the Admin Panel for the Book Model.
+    '''
     prepopulated_fields = {'slug': ['name']}
     search_fields = ['name', 'author']
     list_display = ['name', 'author', 'genre', 'blurb']
@@ -23,6 +29,9 @@ class BookAdmin(admin.ModelAdmin):
 
 @admin.register(Review)
 class ReviewAdmin(admin.ModelAdmin):
+    '''
+    Add fields for the Admin Panel for the Review Model.
+    '''
     search_fields = ['username', 'book_name']
     list_display = ['username', 'book_name', 'details', 'created_on']
     list_filter = ['approved']
