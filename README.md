@@ -18,6 +18,7 @@ Open Book review is an online service that allows users to read and add reviews 
   * [Colour Scheme](#colour-scheme)
   * [Typography](#typography)
   * [Imagery](#imagery)
+  * [Database](#database)
   * [Wireframes](#wireframes)
 
 * [Features](#features)
@@ -66,3 +67,162 @@ Book readers enjoy reading books more than anything, but even they might have a 
 - I can add books on my own so that users can have a wide variety of books to review and explore.
 - I can add/remove comments from users so that the content is friendly and does not offend anyone.
 - I can approve/disapprove book listings from other users so that the website does not have inappropriate content.
+
+
+### Agile Methodology
+The project was planned using Agile method. The kanban board that was created and used for this project can be found [here](https://github.com/users/ARcKP98/projects/9/views/1). 
+
+The user stories outlined above were used to create the board. Each user story was seperated into three categories as the project progressed: Todo, In progress, and Done. This flow was critical in organising the workload and provieded a clear direction for development of the project. 
+![The Kanban board](/readme_content/images/kanban_board.png)
+
+## Design
+### Colour Scheme 
+The colour palette below was used to deign the website.
+![The Colour palette](/readme_content/images/colour_palette.png)
+
+### Typography
+The three fonts that were used to develop this project are:
+<details>
+    <summary>Tangerine: For the welcome message.</summary>
+
+![The Tangerine font](/readme_content/images/tangerine-font.png) 
+</details>
+<details>
+    <summary>Hind Siliguri: For the Logo and the navigation items.</summary>
+
+![The Hind Siliguri font](/readme_content/images/hind-siliguri-font.png) 
+</details>
+<details>
+    <summary>Work Sans: For all the remaining text elements(eg: Book info)</summary>
+
+![The Work Sans font](/readme_content/images/work-sans.png) 
+</details>
+
+<br> 
+
+Sans Serif is the back up font for the entire project.
+The fonts are from [Google Fonts](https://fonts.google.com/)
+
+### Images
+The only images that were sourced online were:
+
+<details>
+<summary>Welcome Image</summary>
+
+![The Welcome Image](/readme_content/images/hero_image.jpeg)
+</details>
+
+<details>
+<summary>Genre Image</summary>
+
+![The Genre Image](/readme_content/images/genre_image.jpeg)
+</details>
+<details>
+<summary>Placeholder Image(For books)</summary>
+
+![The Placeholder Image for books](/readme_content/images/placeholder.avif)
+</details>
+
+<br>
+
+All images are credited in the [credits](#credits). Any image apart form the above list is uploaded by the user. 
+
+### Database
+![The Database Schema](/readme_content/images/database_schema.png)
+
+<br>
+
+### Wireframes
+
+<details>
+<summary>Desktop Wireframes</summary>
+<details>
+<summary>Home Page</summary>
+
+![Home page desktop](/readme_content/wireframes/index(not_logged_in).png)
+</details>
+<details>
+<summary>Home Page(logged in user)</summary>
+
+![Home page when the user is logged in](/readme_content/wireframes/index(logged_in).png)
+</details>
+<details>
+<summary>Genre page</summary>
+
+![Genre page on desktop for logged in and non-logged in users](/readme_content/wireframes/genre_page(not_logged_in).png)
+</details>
+<details>
+<summary>Book details page(non-logged in user)</summary>
+
+![Book details page for non-logged in user](/readme_content/wireframes/book_details(not_logged_in).png)
+</details>
+<details>
+<summary>Book details page(logged in user)</summary>
+
+![Book details page for ogged in user](/readme_content/wireframes/book-details(logged_in).png)
+</details>
+
+<details>
+<summary>Login page</summary>
+
+![Login page on desktop](/readme_content/wireframes/login_page.png)
+</details>
+<details>
+<summary>Logout page</summary>
+
+![Logout page on desktop](/readme_content/wireframes/logout.png)
+</details>
+<details>
+<summary>Sign Up page</summary>
+
+![Sign up page on desktop](/readme_content/wireframes/sign_up_page.png)
+</details>
+<details>
+<summary>Contact page</summary>
+
+![Contact page on desktop](/readme_content/wireframes/contact_form.png)
+</details>
+</details>
+
+<br>
+
+<details>
+<summary>Mobile Wireframes</summary>
+
+<details>
+<summary>Home Page</summary>
+
+![Home page for mobile](/readme_content/wireframes/index(mobile).png)
+</details>
+<details>
+<summary>Genre Page</summary>
+
+![Genre page for mobile](/readme_content/wireframes/genre_page(mobile).png)
+</details>
+<details>
+<summary>Book details page</summary>
+
+![Book details page for mobile](/readme_content/wireframes/book-details(mobile).png)
+</details>
+<details>
+<summary>Login page</summary>
+
+![Login page on mobile](/readme_content/wireframes/login_page(mobile).png)
+</details>
+<details>
+<summary>Logout page</summary>
+
+![Logout page on mobile](/readme_content/wireframes/logout(mobile).png)
+</details>
+<details>
+<summary>Logout page</summary>
+
+![Sign Up page on mobile](/readme_content/wireframes/sign_up_page(mobile).png)
+</details>
+<details>
+<summary>Contact page</summary>
+
+![Contact page on mobile](/readme_content/wireframes/contact_form(mobile).png)
+</details>
+</details>
+
