@@ -227,7 +227,7 @@ All images are credited in the [credits](#credits). Any image apart form the abo
 </details>
 
 ## Features 
-The project has 12 HTML templates each with their own purpose. Every page has the navbar and footer elements in them for better navigation.
+The project has 12 HTML templates each with their own purpose. Every page has the navbar and footer elements in them for better navigation. The admin panel is used to approve/disapprove content and only the admin can access it. 
 <br>
 The first page the user sees is the home page. The navbar has the logo of the service at the very begining followed by the link to the home page, genre section, and contact page. At the end of the navbar are the account options which allow users to sign up or login. They were set at the end of the navbar to distinguish between page elements and account details. Underneath the navbar is a welcome message that tells the user the purpose of the website. 
 
@@ -253,5 +253,67 @@ The page ends with a footer which has all social media links.
 The next page is the genre page where users can find all the books that belong to that genre. Each card has a book which shows the name of the book and the author of the book. 
 
 ![Books in the genre](/readme_content/images/genre-books.png)
+
+After clicking on the book of choice, the user is shown all the relevant information about the book. This includes the name of the book, the name of the author, and the user who uploaded the book. Then there is a blurb to gove users an idea of what the book is about/what to expect followed by how the book was rated and how many people have read it. The page is below is for when a user is not logged in or just browsing the webiste.
+
+![Book info](/readme_content/images/book-info.png)
+<br>
+
+When the user is logged in, the page also shows how to the user previously rated the book and allows them to change the review. If the book is closed, the user has read the book. If the book is open, the user has not read the book. Also the colour of the book icon is changed to blue when the user is logged in as opposed to when the user is not logged in. 
+
+![Books info(logged in)](/readme_content/images/book-info-liked.png)
+
+On the same page, underneath the book-info, the user can read all the reviews that are left by other users on this book. The page below is for when the user is not logged in. If the user would like to leave a review, they have to sign up or login to the website. 
+
+![Book info review](/readme_content/images/review.png)
+
+If the user is logged in, there is a review form which can be filled by the user to submit their review. This review will then be approved by admin for inappropriate content and if approved it will appear on the page.
+
+![Books info review(logged in)](/readme_content/images/review-logged-in.png)
+
+After reviews are approved, the user can edit or delete their review for their own reasons. The user can click the edit button and will be taken to the edit page shown below. Then after submitting the user will be taken back to the book page. If after approval the review is edited by the original poster, the comment can be deleted by the admin on the website if the edit is inappropriate. 
+
+![Edit review](/readme_content/images/edit-review.png)
+
+If the user wishes to delete their review, they can do so by clicking the delete button. This will take the user to the delete page where they will be asked to confirm their choice to delete the review or not. If the user decides to delete the review, the review will be deleted and the user will be brought back to the book page with a message stating that the review was deleted. If the review is not deleted, the user will still be brought back to the book page with their review untouched. 
+
+![Delete review](/readme_content/images/delete-review.png)
+
+If the user wants to contact the admin with questions or suggestions, there is contact us page that can be used to send the admin an email with their query. When the user submits the form, an email is sent to the admin using EmailJS. The email is show below along with the template that is used by EmailJS.
+
+![Contact Form](/readme_content/images/contact-form.png)
+![Email](/readme_content/images/email.png)
+![Email Template](/readme_content/images/email-template.png)
+
+The website also provide users with feedback on their actions. The following user actions will provide users with feedback:
+- Logging in
+- Logging out
+- Successful edit of a review
+- Successful deletion of a review
+- Successful submission of the contact form. 
+- Successful submission of the add-book form. 
+
+The messages would look like this: 
+![Message example](/readme_content/images/message.png)
+<br>
+
+If the page does not exist, a 404 error page will be displayed.
+
+![404 page](/readme_content/images/404-page.png)
+<br>
+
+The login and Logout pages:
+![Login](/readme_content/images/login.png)
+![Logout](/readme_content/images/logout-confirmation.png)
+![Sign Up](/readme_content/images/sign-up.png)
+<br>
+
+The website is mobile friendly with the only major difference being that there is a collapsible navabar.
+![Mobile](/readme_content/images/mobile.png)
+
+
+
+
+
 
 
