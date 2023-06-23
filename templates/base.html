@@ -131,9 +131,9 @@
       emailjs.sendForm('gmail', 'open-book-review-contact', '#contact-form')
         .then(function () {
           document.getElementById('contact-msg').classList.remove('hide');
-          homeUrl = "{% url 'home' %}"
+          homeUrl = "{% url 'home' %}";
           setTimeout(function () {
-            window.location.href = homeUrl
+            window.location.href = homeUrl;
           }, 2500);
         });
     });
