@@ -312,6 +312,25 @@ The website is mobile friendly with the only major difference being that there i
 ![Mobile](/readme_content/images/mobile.png)
 
 
+## Future Implementations
+As an update, I would like to add more functionality to the website such as: 
+- The ability to delete and edit book details so user can add/remove information to better convey information. 
+- The ability to reset password so that users can use the same account if they forget their password. 
+- Allow admin to approve/disapprove books and reviews without using the admin panel.
+- A user profile where users can see all their read books, their reviews, and the books they have uploaded which can be viewed by other users. 
+- Add a search function where users can look for a book they want to see whether it exists or not. 
+- Allow users to add genres so that they are not limited to admin generated genre. 
+- Allow users to login with their social accounts to make the sign up process convenient. 
+
+## Accessibility
+To make sure the site followed accessibilty principles: 
+- The colour contrast has the AA rating.
+- All the content is readable and clear. 
+- Aria labels and alt tags were used where neccesary.
+
+
+
+
 
 
 
