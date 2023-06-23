@@ -226,3 +226,28 @@ All images are credited in the [credits](#credits). Any image apart form the abo
 </details>
 </details>
 
+## Features 
+The project has 12 HTML templates each with their own purpose. Every page has the navbar and footer elements in them for better navigation.
+<br>
+The first page the user sees is the home page. The navbar has the logo of the service at the very begining followed by the link to the home page, genre section, and contact page. At the end of the navbar are the account options which allow users to sign up or login. They were set at the end of the navbar to distinguish between page elements and account details. Underneath the navbar is a welcome message that tells the user the purpose of the website. 
+
+![Home Page](/readme_content/images/welcome.png)
+
+This is followed by the genre section where use can see all the genres that are available. The section only has 6 genres at a time so to not make the home page longer than needed. The next button is used to view other genres. 
+
+![Genre section](/readme_content/images/genre-section.png)
+
+<br>
+However, if the user is logged in, the page will look slightly different. To start with, the username of the user will be seen on the navbar to indicate that they are logged in. 
+
+![Logged in](/readme_content/images/logged-in-user.png)
+
+In between the welcome message and the genre section, there will be the option for the user to add a book to the collection. This will take the user to the form template where they can add the book. The book will then be reviewed by the admin before it is published on the website. 
+![Add book option](/readme_content/images/add-book-option.png)
+![Add book form](/readme_content/images/add-book-form.png)
+
+The page ends with a footer which has all social media links. 
+![Footer](/readme_content/images/footer.png)
+
+<br>
+The next page is the genre page where users can find all the books that belong to that genre. Each card has a book which shows the name of the book and the author of the book. The arrow next to the heading acts as an alternate way to go back to the genre section. Other ways to go back would be to use the navbar item or to simply use the back browser button. 
