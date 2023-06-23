@@ -28,7 +28,9 @@ Open Book review is an online service that allows users to read and add reviews 
 
 * [Technologies Used](#technologies-used)
   * [Languages Used](#languages-used)
-  * [Libraries and Programs Used](#libraries-and-programs-used)
+  * [Frameworks and Programs Used](#frameworks-and-programs-used)
+    * [Frameworks/Database](#frameworks/database)
+    * [Programs](#programs)
 
   * [Testing](#testing)
 
@@ -227,7 +229,11 @@ All images are credited in the [credits](#credits). Any image apart form the abo
 </details>
 
 ## Features 
-The project has 12 HTML templates each with their own purpose. Every page has the navbar and footer elements in them for better navigation. The admin panel is used to approve/disapprove content and only the admin can access it. 
+The project has 12 HTML templates each with their own purpose. Every page has the navbar and footer elements in them for better navigation. The admin panel is used to approve/disapprove content and only the admin can access it.
+<br>
+All pages have the following favicon
+
+![Favicon](/readme_content/images/favicon.png)
 <br>
 The first page the user sees is the home page. The navbar has the logo of the service at the very begining followed by the link to the home page, genre section, and contact page. At the end of the navbar are the account options which allow users to sign up or login. They were set at the end of the navbar to distinguish between page elements and account details. Underneath the navbar is a welcome message that tells the user the purpose of the website. 
 
@@ -312,7 +318,7 @@ The website is mobile friendly with the only major difference being that there i
 ![Mobile](/readme_content/images/mobile.png)
 
 
-## Future Implementations
+### Future Implementations
 As an update, I would like to add more functionality to the website such as: 
 - The ability to delete and edit book details so user can add/remove information to better convey information. 
 - The ability to reset password so that users can use the same account if they forget their password. 
@@ -322,11 +328,42 @@ As an update, I would like to add more functionality to the website such as:
 - Allow users to add genres so that they are not limited to admin generated genre. 
 - Allow users to login with their social accounts to make the sign up process convenient. 
 
-## Accessibility
+### Accessibility
 To make sure the site followed accessibilty principles: 
 - The colour contrast has the AA rating.
 - All the content is readable and clear. 
 - Aria labels and alt tags were used where neccesary.
+
+## Technologies Used
+### Languages Used
+- HTML5 
+- CSS3
+- JavaScript ES6
+- Python
+
+### Frameworks and Programs Used
+#### Frameworks/Database
+- Bootstrap: To help with styling and responsiveness. 
+- Django: Main framework used to build the project. 
+- ElephantSQL: Used to host the PostgresSQL databasee.
+- Git: Version control. 
+- Heroku: Deploy the project. 
+
+#### Programs
+- Am I Responsive: Show website on different devices. 
+- Balsamiq: Create wireframes for the project. 
+- Coolors: Creating the colour pallete for the project 
+- Cloudinary: To manage images on the website. 
+- Draw.io: To create the ERD diagram. 
+- EmailJS: To send emails using the contact form. 
+- Favicon.io: To generate the favicon.
+- Font Awesome: For all the icons on the website. 
+- Google DevTools: To check for responsiveness and testing. Also used to measure colour contrast. 
+- Google Fonts: Used to import fonts for the website. 
+<br>
+
+All the python modules can be found in the requirements.txt. 
+
 
 
 
