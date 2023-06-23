@@ -18,10 +18,9 @@
         <div class="card card-books">
           {% if "Placeholder" in book.image.url %}
           <img class="card-image" src="{% static 'images/placeholder.avif' %}"
-            alt="An open book image for a book with no cover." width="100%">
+            alt="An open book image for a book with no cover.">
           {% else %}
-          <img class="card-image" src="{{ book.image.url }}" alt="Cover image for the book: {{book.name}}."
-            width="100%">
+          <img class="card-image" src="{{ book.image.url }}" alt="Cover image for the book: {{book.name}}.">
           {% endif %}
           <div class="card-body">
             <h5 class="card-title">{{book.name}}</h5>
