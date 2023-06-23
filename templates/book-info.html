@@ -38,21 +38,20 @@
                                         {% if user.is_authenticated %}
                                         <form action="{% url 'book_read' book.slug %}" class="read-btn" method="POST">
                                             {% csrf_token %}
-                                            {% if liked %}
-                                            <button type="submit" value="{{book.slug}}" class="read-btn"><i
-                                                class="fa-solid fa-book" aria-label="Read book icon"></i>
+                                            {% if read %}
+                                            <button type="submit" value="{{book.slug}}" class="read-btn" aria-label="Read book icon"><i
+                                                class="fa-solid fa-book"></i>
                                             </button>
                                             {% else %}
-                                            <button type="submit" value="{{book.slug}}" class="read-btn"><i
-                                                class="fa-solid fa-book-open"
-                                                aria-label="Not read book icon"></i>
+                                            <button type="submit" value="{{book.slug}}" class="read-btn" aria-label="Not read book icon"><i
+                                                class="fa-solid fa-book-open"></i>
                                             </button>
                                             {% endif %}
                                         </form>
                                         {% else %}
                                         <span class="text-secondary"><i class="fa-solid fa-book-open"></i></span>
                                         {% endif %}
-                                        <span class="text-secondary">{{ book.number_of_likes }} </span>
+                                        <span class="text-secondary">{{ book.number_of_read }} </span>
                                     </strong>
                                 </div>
                             </div>
@@ -90,7 +89,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 mt-5">
-                    <h5>What do you think, {{user.username}}?</h5>
+                    <h4>What do you think, {{user.username}}?</h4>
                     <form method="post">
                         {{ review_form | crispy }}
                         {{ form.as_p }}

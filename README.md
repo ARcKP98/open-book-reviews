@@ -250,4 +250,8 @@ The page ends with a footer which has all social media links.
 ![Footer](/readme_content/images/footer.png)
 
 <br>
-The next page is the genre page where users can find all the books that belong to that genre. Each card has a book which shows the name of the book and the author of the book. The arrow next to the heading acts as an alternate way to go back to the genre section. Other ways to go back would be to use the navbar item or to simply use the back browser button. 
+The next page is the genre page where users can find all the books that belong to that genre. Each card has a book which shows the name of the book and the author of the book. 
+
+![Books in the genre](/readme_content/images/genre-books.png)
+
+
