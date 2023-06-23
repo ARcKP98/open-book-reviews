@@ -134,7 +134,7 @@ header a {
 }
 
 .review-form {
-  display: display;
+  display: block;
   margin: 0 auto;
 }
 
