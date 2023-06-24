@@ -115,3 +115,116 @@ Tests:
 
 </details>
 <br>
+
+### Lighthouse testing
+The performance scores were lower than expected. The main reason for these low score had to do with ineeficient cache policy and image styling. The image styling issues were addressed by giving them explicit height and width but for some reason lighthouse was unable to recognise the changes. Apart from that, all scores were reletively high. Another key facotr was eliminating render blocking resources which also affected the performance but they were needed for proper styling and structure. 
+
+<br>
+
+Home Page
+<details>
+<summary>Desktop</summary>
+
+![Lighthouse desktop home page](/readme_content/images/home-desktop.png)
+
+</details>
+<br>
+<details>
+<summary>Mobile</summary>
+
+![Lighthouse mobile home page](/readme_content/images/home-mobile.png)
+
+</details>
+<br>
+Genre page
+<details>
+<summary>Desktop</summary>
+
+![Lighthouse desktop genre page](/readme_content/images/genre-books-desktop.png)
+
+</details>
+<br>
+<details>
+<summary>Mobile</summary>
+
+![Lughthouse mobile genre page](/readme_content/images/genre-books-mobile.png)
+
+</details>
+<br>
+Book-Info page
+<details>
+<summary>Desktop</summary>
+
+![Lighthouse desktop book-info page](/readme_content/images/book-info-desktop.png)
+
+</details>
+<br>
+<details>
+<summary>Mobile</summary>
+
+![Lighthouse mobile book-info page](/readme_content/images/book-info-mobile.png)
+
+</details>
+<br>
+Contact Page
+<details>
+<summary>Desktop</summary>
+
+![Lighthouse desktop contact page](/readme_content/images/contact-form-desktop.png)
+
+</details>
+<br>
+<details>
+<summary>Mobile</summary>
+
+![Lighthouse mobile contact page](/readme_content/images/contact-form-mobile.png)
+
+</details>
+<br>
+Login Page
+<details>
+<summary>Desktop</summary>
+
+![Lighthouse desktop login page](/readme_content/images/login-desktop.png)
+
+</details>
+<br>
+<details>
+<summary>Mobile</summary>
+
+![Lighthouse mobile login page](/readme_content/images/login-mobile.png)
+
+</details>
+<br>
+Sign Up
+<details>
+<summary>Desktop</summary>
+
+![Lighthouse desktop signup page](/readme_content/images/signup-desktop.png)
+
+</details>
+<br>
+<details>
+<summary>Mobile</summary>
+
+![Lighthouse mobile signup page](/readme_content/images/signup-mobile.png)
+
+</details>
+<br>
+Logout Page
+<details>
+<summary>Desktop</summary>
+
+![Lighthouse desktop logout page](/readme_content/images/logout-desktop.png)
+
+</details>
+<br>
+<details>
+<summary>Mobile</summary>
+
+![Lighthouse mobile logout page](/readme_content/images/logout-mobile.png)
+
+</details>
+<br>
+
+
