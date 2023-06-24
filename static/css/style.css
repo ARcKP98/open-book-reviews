@@ -59,6 +59,10 @@ header a {
   background-color: yellowgreen;
 }
 
+.home-img {
+  width: 100%;
+  height: auto;
+}
 
 .page-link {
   color: #000000;
