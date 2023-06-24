@@ -365,6 +365,10 @@ To make sure the site followed accessibilty principles:
 All the python modules can be found in the requirements.txt. 
 
 
+## Testing
+
+Refer to the [Testing.md](/Testing.md) file. 
+
 
 
 
