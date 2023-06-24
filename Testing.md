@@ -2,7 +2,7 @@
 #### Continue reading the main [README](/README.md#testing).
 <br>
 
-## Validation tests
+## Validation Tests
 <br>
 
 ### W3C validation (HTML)
@@ -226,5 +226,36 @@ Logout Page
 
 </details>
 <br>
+
+## Manual Testing
+
+### User Story testing
+
+| User Story| How was it addressed | Accomplished
+| -------- | ----------- | ---------------
+| As a User I can look at all the books that are available so that I can read/write reviews and explore all the options. | The users can explore books by clicking on their book of choice where they can see everything related to the book. | Yes
+| As a User I can add/delete/edit reviews so that I can pass my opinions accurately. | The users can leave reviews on the same page underneath the book details where they can edit/delete them afterwards if needed. | Yes
+| As a User I can create an account so that I can leave reviews for books. | It is mandatory for users to create an account if they want to leave reviews on books. If the user is not logged in, they are told to login if they wish to leave reviews. | Yes
+| As a Admin I can approve/disapprove book listings from other users so that the website does not have inappropriate content.| The admin can approve/disapprove books through the admin panel if they feel that the content uploaded is inappropriate. | Yes
+| As a Admin I can add books on my own so that users can have a wide variety of books to review and explore. | The admin can add books via the frontend page like other users, or through the admin panel to the website. | Yes
+| As a User I can browse the site without logging in so that I can browse the site without any major restrictions. | Users who are not logged in can still browse the site freely without logging in. They will however, have to login to leave reviews. | Yes
+| As a Admin I can add/remove comments from users so that the content is friendly and does not offend anyone. | The admin can remove comments from the admin panel or the frontend page. | Yes
+| As a Admin I can create an admin account so that I can moderate content that is offensive. | The admin account is a superuser and is the only account that can moderate content. The admin can use the same credentials to login with these credentials on the website an on the panel. | Yes
+| As a User I can navigate through the website so that I can find the information effortlessly without any confusion. | The user can navigate the website with ease since all the labels on the website for pages are clear and inform their purpose and only serve one purpose. | Yes
+| As a User I can view the site on different devices so that I can use any device I want to access the site. | The website can be used on most mobiles, laptops, and desktop computers. | Yes
+| As a User I can contact the admin through the site so that I can communicate my opinions to the admin. | The website has a contact page where users can put in their information and the question/query that would like to ask which will be sent directly to the admin's email account. | Yes
+| As a User I can get feedback on my actions after I have performed them so that I know my intended purpose was achieved. | After performing an action (eg: editing a review, logging out, submitting the contact form, etc.) the user gets a message on the top stating that the task was done and in some cases informs of the next steps that will happen. | Yes
+
+<br>
+User stories that were not implemented(decided to drop) in this version were:
+<br>
+
+| User Story| How was it addressed | Accomplished
+| -------- | ----------- | ---------------
+| As a User I can add books to my own "library" so that I can curate a list of books I want to read. | Due to circumstances out of my control, this feature was skipped and was decided to add in future implementations for this project. | No
+| As a User I can view the profile page of other users so that can see their books. | Since the feature above was not implemented, adding this feature was not possible. | No
+
+
+
 
 
