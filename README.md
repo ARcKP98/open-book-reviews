@@ -379,7 +379,135 @@ All the python modules can be found in the requirements.txt.
 
 Refer to the [Testing.md](/Testing.md) file. 
 
+<br>
 
+## Deployment & Local Development 
+<br>
+
+### Deployment 
+This project was deployed using Heroku. The steps below were used to deploy this project. 
+
+Setting up the Django project in your cloud IDE.
+- Install Django and gunicorn using pip3. This project used django version 3.2 [*pip3 install 'django<3.2' gunicorn*].
+- Install the supporting libraries: dj_database_url(verion 0.50) and psycopg2 [*pip3 install dj_database_url==0.5.0 psycopg2*]
+- Install Cloudinary libraries [*pip3 install dj3-cloudinary-storage* and *pip3 install urllib3==1.26.15*]
+- Create a requirements.txt file [*pip3 freeze --local > requirements.txt*]
+- Create the Django project by replacing proj_name with your desired name [*django-admin startproject proj_name .*]
+- Create the app by replacing app_name with your desired name [*python3 manage.py startapp app_name*]
+- In settings.py, add you app_name to the INSTALLED_APPS. 
+- Migrate the changes [*python3 manage.py migrate*]
+- Run the server to see if it workds [*python3 manage.py migrate*]
+  - If there is a DISALLOWED HOST error, simply copy the url after the invalid host header and add it to your ALLOWED_HOSTS in settings.py.
+
+After setting up the project, create an external database. For this project ElephantSQL was used.
+- Go to ElephantSQL website and Sign Up/Login.
+- Click *Create New Instance*.
+- Configure the database by giving it a name, choosing your plan, and choosing your region. Review before procceding. 
+- Then click on Create Instance.
+- Go to the dashboard and click on the instance you just created. 
+- Copy the URL of that instance and save it since it will be used for deployment. 
+
+You will also need your Cloudinary URL. 
+- Sign Up/Login to Cloudinary. 
+- Go to the Cloudinary dashboard and copy the url from API Environment Variable and store it. 
+
+On Heroku
+- Create a new app. 
+- In settings, click on *Reveal Config Vars*. 
+- In the Key field add *DATABASE_URL* and in the Value field add the copied URL.
+- Add a *SECRET_KEY* in the Key field in the Value field add a key of your choice. Keep this safe.
+- Add *CLOUDINARY_URL* to Config Vars with the Value being the URL. 
+- Add *DISABLE_COLLECTSTATIC* Key and set its Value to 1. 
+
+Afterwards, create an env.py file in your cloud IDE.
+- Import os library [*import os*]
+- Set the environment variables for *DATABASE_URL*, *SECRET_KEY*, and *CLOUDINARY_URL*
+  - EG: *os.environ["CLOUDINARY_URL"] = "YOUR_CLOUDINARY_URL"*
+
+Update your settings.py file. 
+- At the top of the file, import the env file. 
+```
+from pathlib import Path
+import os
+import dj_database_url
+
+if os.path.isfile("env.py"):
+   import env
+```
+- Replace the SECRET_KEY with your own key. *SECRET_KEY = os.environ.get('SECRET_KEY')*.
+- Add your own Database. 
+```
+DATABASES = {
+   'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+}
+```
+Comment the old Database code. 
+- Add Cloudinary libraries to the installed apps. The order in which they are added is important so stick to the order. 
+```
+    'cloudinary_storage',
+    'django.contrib.staticfiles',
+    'cloudinary',
+```
+- Under static files section, add the following code. 
+```
+STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+MEDIA_URL = '/media/'
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+```
+- Under BASE_DIR, add the following code
+```
+TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
+```
+- Within the Templates array(just above databases), change the templates directory to the above TEMPLATES_DIR
+```
+ 'DIRS': [TEMPLATES_DIR],
+``` 
+- Add Heroku Hostname to ALLOWED_HOSTS: *ALLOWED_HOSTS = ["PROJ_NAME.herokuapp.com", "YOUR_HOSTNAME"]*.
+- Make another migration. [*python3 manage.py migrate*]
+
+Next add a few file in the top level of your repository.
+- A Procfile with the code: *web: gunicorn proj_name.wsgi*
+- A static folder. 
+- A templates folder.
+- A media folder.
+
+Commit these changes to Github using: *git add .*, *git commit -m "Deployment commit"*, *git push*.
+
+To deploy on Heroku:
+- Go to deploy tab of your project. 
+- In the deployment method, make sure Github is selected. 
+- Search the repository where the django project is and click connect. 
+- Once connected, scroll down to Manual deploy and  click deploy branch to test if the deployment works. 
+
+For your final deployment:
+- Set *DEBUG=FALSE* in settings.py. 
+- Remove *DISABLE_COLLECTSTATIC* from heroku config vars.
+- Go to deploy and scroll down to Manual deploy and click deploy branch.
+- Once the deployment is successful, you can press the view button to view your site. 
+
+<br>
+
+### Local Development 
+In local development, always ensure you have an env.py file with the information mentioned above if you plan to use this repository. 
+
+#### Fork
+1. Log in with your Github account or make one if you don't have one. 
+2. Find the repository: open_book_reviews.
+3. Click the Fork button on the top right corner. 
+<br>
+
+#### Clone 
+1. Log in with your Github account or make one if you don't have one. 
+2. Find the repository: Book_club.
+3. Click the **Code** button next to the Gitpod button and **copy** the HTTPS link. 
+4. Open the terminal. 
+5. Make sure that the current directory is the one where you want the cloned repository to be. 
+6. Use the command ```git clone``` and paste the link. 
+7. Press Enter. Now the repository is cloned. 
+<br>
 
 
 
