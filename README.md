@@ -51,7 +51,7 @@ Open Book review is an online service that allows users to read and add reviews 
         * [Clone](#clone)
 
 * [Credits](#credits)
-  * [Code Used](#code-used)
+  * [Code](#code)
   * [Content](#content)
   * [Media](#media)
   * [Acknowledgments](#acknowledgments)
@@ -509,7 +509,37 @@ In local development, always ensure you have an env.py file with the information
 7. Press Enter. Now the repository is cloned. 
 <br>
 
+## Credits
+### Code
+- [The CI blog walkthrough](https://github.com/ARcKP98/blog_django) for inspiration and pagination code. 
+- [Django star ratings](https://django-star-ratings.readthedocs.io/en/latest/?badge=latest/#) for adding star ratings to books.
+- [Django documentation](https://docs.djangoproject.com/en/3.2/) for help with mixins and Views.
+- [Stack Overflow](https://stackoverflow.com/questions/46012482/unwanted-white-space-on-right-side-in-mobile-view) for add-book space issue.
+- [Geeks for geeks](https://www.geeksforgeeks.org/python-uploading-images-in-django/) for helping with the image upload for forms.
+- [Very Academy](https://www.youtube.com/watch?v=S9-Bt1JgRjQ) for genre page guidance. 
+- [Codemy.com](https://www.youtube.com/watch?v=m3efqF9abyg) for add-book inspiration. 
 
+<br>
+
+### Content
+All the content except for book blurbs is provided by me. The book blurbs are user generated and can be from other sources on the internet.
+
+<br>
+
+### Media
+- The Welcome message image is from [Pexels](https://www.pexels.com/photo/books-in-black-wooden-book-shelf-159711/).
+- The placeholder image for books is from [Freepik]( https://img.freepik.com/free-photo/book-composition-with-open-book_23-2147690555.jpg).
+- The Favicon image is from [PNGWING](https://www.pngwing.com/en/free-png-ydtar).
+- The Error image is from [Pixabay](https://pixabay.com/vectors/help-icon-book-font-question-mark-1657279/).
+- The Genre image is from [depositphotos](https://nl.depositphotos.com/vector-images/verwijzing.html).
+<br>
+Other images(like the ones used as book cover) are uploaded by the user. 
+
+<br>
+
+### Acknowledgments
+- Adegbenga Adeye for answering my questions and providing me with useful resources and feedback on the project.
+- The tutor support for helping me understand django better and for their guidance and support in solving issues.
 
 
 
