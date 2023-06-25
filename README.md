@@ -6,6 +6,16 @@ Open Book review is an online service that allows users to read and add reviews 
 <br>
 
 ### The [link](https://open-book-review.herokuapp.com/) to the live project
+
+<br>
+<p>
+    <a href="http://jigsaw.w3.org/css-validator/check/referer">
+        <img style="border:0;width:88px;height:31px"
+            src="http://jigsaw.w3.org/css-validator/images/vcss"
+            alt="Valid CSS!" />
+    </a>
+</p>
+
 ---
 
 ## Contents

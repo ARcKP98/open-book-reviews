@@ -320,7 +320,7 @@ User stories that were not implemented(decided to drop) in this version were:
 
 <br>
 
-### Manual Testing
+## Manual Testing
 The following tables show testing for all the major pages. 
 <br>
 
@@ -433,15 +433,32 @@ General test
 | Users should be notified after major decisions.  | Users should be notified via a message when the submit any kind of form by a message that is displayed on the top of the screen. | Try to submit all the forms step by step to see that the user gets a message confirming that the action was a success. | Yes
 | The messages should disappear after a while.  | The messages displayed to confirm the action should disappear after a few seconds. Alternatively, the close button should close the message. | Observe that the message disappears after a few seconds and also closes when the user clicks the X button. | Yes
 
+<br>
+While working on the project, I made commits after certain changes which were registered on github but the gitpod workspace was unchaged. Therefore some changes (like model and view update) had to be comnmited again. 
 
+<br>
 
+## Issue
 
-
-
-
-
-
-
+| Issue| Solution | 
+| -------- | ----------- | 
+| The admin model was not working since I was getting a programming error. |  It was a migration error since I did not migrate after renaming my fields. |
+| Issue with Genre view and url. |  Spelling issue for views. Filtering with slug was not specified in the index url for genres which was the reason for genre page not loading. Target the slug instead of name of genre which also led to invalid url. |
+| Genre cards were not being displayed. |  The for loop was not being evaluated properly so addressed that. |
+| The footer was all the way up on the specific genre pages. |  Add d-flex  flex-column min-vh-100 to the body and mt to the footer. |
+| The genre nav item redirect to the genre section was not working. | Template syntax error since I added the section id to the url when it should have been outside the url {}. |
+| The footer on book-info page disappeared when a new view was added for reviewing(review_form). |  The footer was there but with a different style after adding more to the view. The error only occurred when the reviews were populated. This was solved by adding correct closing div tags.  | 
+| Unwanted whitespace on mobile when the add-book form was shown. |  Add custom styling. |
+| IntegrityError when rendering the book-info page for certain books where the object had null values. |  Instead of using the username of the user, the user instance needed to be accessed in the BookInfo view. |
+| The view was not rendering for add book. |  The add book was being treated as a slug when it should not have been. So to avoid that I rearranged the paths so that the book-info path which had <slug> was at the bottom. |
+| The image of a book does not load when viewing them in the genre list after a user has added an image using the add book form. The image only shows up when added via admin panel. |  Solved it by adding enctype to form and request.FILES to view. |
+| When adjusting the card lengths of books, all cards followed the same style except the adventure genre. | Had to change the cards styling completely. |
+| The name of the author was not shown on book details when they had uploaded the. book. | Use LoginRequired mixin to register the author. |
+| The reviews were placed inside each other. | The loop tags were in the wrong spot. |
+| The edit button was not showing up after adding a conditional statemenet. |  Access the user id instead of just user.username. |
+| After the review was edited, the redirect to the book page was not working. For delete review there was a similar Attribute Error |  Define a success url and define kwargs to go back to the book page. |
+| The review field was not being rendered properly. | Use form.as_p |
+| The success message would not be displayed for contact form after the form was submitted. | Add message code to the template itself and modify the EmailJS code to render it.|
 
 
 
