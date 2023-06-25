@@ -228,7 +228,7 @@ All images are credited in the [credits](#credits). Any image apart form the abo
 </details>
 </details>
 
-## Features 
+## General Features 
 The project has 12 HTML templates each with their own purpose. Every page has the navbar and footer elements in them for better navigation. The admin panel is used to approve/disapprove content and only the admin can access it.
 <br>
 All pages have the following favicon

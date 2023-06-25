@@ -42,6 +42,29 @@ Tests:
 </details>
 <br>
 <details>
+<summary>Add Book Page</summary>
+The info here could not be changed by me because its a default form element that was not visible.
+
+![Add Book Page](/readme_content/images/add-book-valid.png)
+
+</details>
+<br>
+<details>
+<summary>Edit Review Page</summary>
+
+![Edit Review Page](/readme_content/images/edit-valid.png)
+
+</details>
+<br>
+<details>
+<summary>Delete Review page</summary>
+The info here could not be changed by me because its a default form element that was not visible.
+
+![Delete Review Page](/readme_content/images/delete-valid.png)
+
+</details>
+<br>
+<details>
 <summary>Login page</summary>
 
 ![Login Page](/readme_content/images/login-page-valid.png)
@@ -117,7 +140,7 @@ Tests:
 <br>
 
 ### Lighthouse testing
-The performance scores were lower than expected. The main reason for these low score had to do with ineeficient cache policy and image styling. The image styling issues were addressed by giving them explicit height and width but for some reason lighthouse was unable to recognise the changes. Apart from that, all scores were reletively high. Another key facotr was eliminating render blocking resources which also affected the performance but they were needed for proper styling and structure. 
+The performance scores were lower than expected. The main reason for these low score had to do with ineeficient cache policy and image styling. The image styling issues were addressed by giving them explicit height and width but for some reason lighthouse was unable to recognise the changes. Apart from that, all scores were reletively high. Another key factor was the error: eliminating render blocking resources which also affected the performance but they were needed for proper styling and structure. The JS code in base.html for email.js and messages affected the best practice score. 
 
 <br>
 
@@ -128,7 +151,7 @@ Home Page
 ![Lighthouse desktop home page](/readme_content/images/home-desktop.png)
 
 </details>
-<br>
+
 <details>
 <summary>Mobile</summary>
 
@@ -143,7 +166,7 @@ Genre page
 ![Lighthouse desktop genre page](/readme_content/images/genre-books-desktop.png)
 
 </details>
-<br>
+
 <details>
 <summary>Mobile</summary>
 
@@ -158,7 +181,7 @@ Book-Info page
 ![Lighthouse desktop book-info page](/readme_content/images/book-info-desktop.png)
 
 </details>
-<br>
+
 <details>
 <summary>Mobile</summary>
 
@@ -173,11 +196,55 @@ Contact Page
 ![Lighthouse desktop contact page](/readme_content/images/contact-form-desktop.png)
 
 </details>
-<br>
+
 <details>
 <summary>Mobile</summary>
 
 ![Lighthouse mobile contact page](/readme_content/images/contact-form-mobile.png)
+
+</details>
+<br>
+Add Book Pagee
+<details>
+<summary>Desktop</summary>
+
+![Lighthouse desktop add book page](/readme_content/images/add-book-desktop.png)
+
+</details>
+<details>
+<summary>Mobile</summary>
+
+![Lighthouse mobile add book page](/readme_content/images/add-book-mobile.png)
+
+</details>
+<br>
+Edit Review Page
+<details>
+<summary>Desktop</summary>
+
+![Lighthouse desktop edit review page](/readme_content/images/edit-desktop.png)
+
+</details>
+
+<details>
+<summary>Mobile</summary>
+
+![Lighthouse mobile edit review page](/readme_content/images/edit-mobile.png)
+
+</details>
+<br>
+Delete Review Page
+<details>
+<summary>Desktop</summary>
+
+![Lighthouse desktop delete review page](/readme_content/images/delete-desktop.png)
+
+</details>
+
+<details>
+<summary>Mobile</summary>
+
+![Lighthouse mobile delete review](/readme_content/images/delete-mobile.png)
 
 </details>
 <br>
@@ -188,7 +255,6 @@ Login Page
 ![Lighthouse desktop login page](/readme_content/images/login-desktop.png)
 
 </details>
-<br>
 <details>
 <summary>Mobile</summary>
 
@@ -203,7 +269,6 @@ Sign Up
 ![Lighthouse desktop signup page](/readme_content/images/signup-desktop.png)
 
 </details>
-<br>
 <details>
 <summary>Mobile</summary>
 
@@ -218,7 +283,6 @@ Logout Page
 ![Lighthouse desktop logout page](/readme_content/images/logout-desktop.png)
 
 </details>
-<br>
 <details>
 <summary>Mobile</summary>
 
@@ -304,6 +368,74 @@ Contact Page
 | The user should be able to fill out the form and submit it.  | User who wish to contact the admin should be able to fill the form and send it. | Try contacting the admin by filling out and submitting the form. | Yes
 | The form should check all the input fields have been entered correctly.  | The form should warn users when a field is incomplete or does not follow the proper convention for that field. | Try contacting the admin by filling out the form wrong(eg: Improper email address) when submitting the form. | Yes
 | The admin should receive the form after a form is submitted.  | The admin should get the form that was submitted by the user in the email with all the relevant information. | Try contacting the admin by filling out and submitting the form and check the email to see if the form is received. | Yes
+
+<br>
+
+Add Book Page
+| Feature| Expected Outcome | Test | Accomplished
+| -------- | ----------- | --------------- |-------
+| Only logged in users should be allowed to access the form.  | Users who are logged in can be the only people who can access the form by clicking the add book button. Non-logged in users should not have that option. | Check that the button only appears when the user is logged in and leads to the right page when clicked on the button. | Yes
+| The form should have all the relevant input fields needed to submit a book entry.  | The form should have all the labels(name of the book, name of the author, blurb, etc) that are needed for a successful form entry. | Check the rendered form to see if the label exist. | Yes
+| All the madatory fields must be filled in.  | All the forms mandatory information must be entered before submitting. If they are not the user should be asked to fill in the relevant information. | Try to submit an incoplete form and see if there is an error message. | Yes
+
+<br>
+
+Edit Review Page
+| Feature| Expected Outcome | Test | Accomplished
+| -------- | ----------- | --------------- |-------
+| The admin should be allowed to edit any review.  | Admin should be able to edit any review they want if its inappropriate. | Check that the edit button appears when the admin is logged for every review and that when clicked it takes them to the right page. | Yes
+| Users should only be allowed to edit their reviews.  | Users should only be allowed to edit their own reviews and not of other users. | Login as a user and see that they can only edit their reviews and that the page leads to the review form. | Yes
+| Non-logged in users should not be able to edit any review.  | Non logged in users should not see the edit button on any review. | See if the edit option is available when logged out. | Yes
+| The form submission should take the user back to the book page. | After editing and submitting their review, the user should be taken back to the book page with their updated review. | Edit a review and check that the user is taken back to the book page and that the review is updated. | Yes
+
+<br>
+
+Delete Review Page
+| Feature| Expected Outcome | Test | Accomplished
+| -------- | ----------- | --------------- |-------
+| The admin should be allowed to delete any review.  | Admin should be able to delete any review they want if its inappropriate. | Check that the delete button appears when the admin is logged for every review and that when clicked it takes them to the right page. | Yes
+| Users should only be allowed to delete their reviews.  | Users should only be allowed to delete their own reviews and not of other users. | Login as a user and see that they can only delete their reviews and that the page leads to the delete form. | Yes
+| Non-logged in users should not be able to delete any review.  | Non logged in users should not see the delete button on any review. | See if the delete option is available when logged out. | Yes
+|  There should be a defensive check when the user wants to delete their review.  | When a user clicks delete, they should be asked to confirm their decision to delete their review. | Try to delete the review and check that the user is asked for confirmation with Yes and No option. | Yes
+| The form submission on the page should take the user back to the book page. | After deleteing/not deleteing their review, the user should be taken back to the book page with their review deleted or intact. | Delete a review and not delete a different review and check that the user is taken back to the book page with their review deleted or intact. | Yes
+
+Login Page
+| Feature| Expected Outcome | Test | Accomplished
+| -------- | ----------- | --------------- |-------
+| Users should be allowed to log in.  | All users should be allowed to login when they click the login button. | Try to login with the right credentials and see that the user is logged in and taken back to the home page. | Yes
+|Users should only be able to login if they have an account.  | Users should only be able to login if they have an account. If they don't they should sign up for one. | Try to login with the wrong credentials and see that the user is notified that the account dies not exist. | Yes
+|Users should not leave any mandatory fields blank.  | Users should fill out all the input fields that are mandatory. | Try to submit an incomplete form. | Yes
+|Users should be able to sign up by clicking the sign up button on that page.  | User who do not have an account should have the option to sign up by clicking the sign up button. | Try the sign up option from the login page and see that the page is redirected to the right page. | Yes
+
+<br>
+
+Sign Up Page
+| Feature| Expected Outcome | Test | Accomplished
+| -------- | ----------- | --------------- |-------
+| Users should be allowed to Sign Up.  | Users should be allowed to sign up when they click the sign up button. | Try to sign up with the sign up option and fill out the form. | Yes
+|Users should not leave any mandatory fields blank.  | Users should fill out all the input fields that are mandatory. | Try to submit an incomplete form. | Yes
+|Users should be informed that they have an accout if the attempt to create a new one.  | Users should only be allowed to create an account if they don't have an account. If they do they should get a message saying that an account with these credentials exists | Try to sign up with an account that already exists and see that the user is informed of this existance. | Yes
+|Users should be able to login up by clicking the login button on that page.  | User who have an account should have the option to login by clicking the login button. | Try the login option from the sign up page and see that the page is redirected to the right page. | Yes
+
+<br>
+
+Logout Page
+| Feature| Expected Outcome | Test | Accomplished
+| -------- | ----------- | --------------- |-------
+| Users should be allowed to logout.  | Users should be allowed to logout when they click the logout button. | Try to logout with the logout option. | Yes
+| Users should be asked to confirm their decision.  | There should be a defensive check when the user tries to logout where they are asked to confirm their decision. | Try to logout with the logout option and see that the user is asked to confirm their decision again. | Yes
+
+<br>
+
+General test 
+| Feature| Expected Outcome | Test | Accomplished
+| -------- | ----------- | --------------- |-------
+| Users should be notified after major decisions.  | Users should be notified via a message when the submit any kind of form by a message that is displayed on the top of the screen. | Try to submit all the forms step by step to see that the user gets a message confirming that the action was a success. | Yes
+| The messages should disappear after a while.  | The messages displayed to confirm the action should disappear after a few seconds. Alternatively, the close button should close the message. | Observe that the message disappears after a few seconds and also closes when the user clicks the X button. | Yes
+
+
+
+
 
 
 
