@@ -33,7 +33,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["open-book-review.herokuapp.com", "localhost", ".ondigitalocean.app"]
+ALLOWED_HOSTS = ["open-book-review.herokuapp.com", "localhost", "orca-app-5htl3.ondigitalocean.app"]
 
 
 # Application definition
