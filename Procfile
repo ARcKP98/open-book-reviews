@@ -1,1 +1,1 @@
-web: gunicorn open_book_review.wsgi
+web: gunicorn open_book_review.wsgi:application
